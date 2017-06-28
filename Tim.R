@@ -55,6 +55,8 @@ quickCheck()
 
 skillCheck(athletics) + char$abilityMods['Str']
 
+# lockpick
+r(r1d20) + char$abilityMods['Dex'] + char$proficiencyBonus
 skillCheck(acrobatics) + char$abilityMods['Dex']
 skillCheck(sleight) + char$abilityMods['Dex']
 skillCheck(stealth) + char$abilityMods['Dex']
@@ -79,9 +81,11 @@ skillCheck(performance) + char$abilityMods['Chr']
 
 
 # health ------------
-char$maxHealth -15 +12 
+char$maxHealth - 14
+# 0d10 hit dice
 
-# second wind
+# 
+# second wind +
 # d10+figter level
 r(r1d10) + 2
 
@@ -89,7 +93,7 @@ r(r1d10) + 2
 init()
 
 # attack --------------
-char$bolt = 31
+char$bolt = 17
 char$arrow = 20
 
 # hand crossbow
@@ -128,7 +132,6 @@ r(r1d20)
 
 
 # warlock
-###### 2 gold
 # weird bone thingy
 
 # 2 chainmail
@@ -149,7 +152,8 @@ r(r1d20)
 # smoking pipe N
 # keyring
 # battle maps
-# 
+# demon statue
+# 2 keys on a keyring from the study.
 
 # briar glen
 
