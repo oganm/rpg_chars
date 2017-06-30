@@ -3,7 +3,8 @@ library(diceSyntax)
 
 char = importCharacter('Tim_Fighter')
 
-# by default the name getOption('defaultCharacter') returns 'char'. If another name is used use options(defaultCharacter = 'whatever') to set or manually
+# by default the name getOption('defaultCharacter') returns 'char'.
+# If another name is used use options(defaultCharacter = 'whatever') to set or manually
 # specify char when running functions
 
 timAttack = function(adv = 0,
@@ -36,12 +37,7 @@ timAttack = function(adv = 0,
 # ability scores ----------
 char$abilityMods
 # saves -------------
-save('Str')
-save('Dex')
-save('Con')
-save('Chr')
-save('Int')
-save('Wis')
+quickSave()
 
 abilityCheck('Str')
 abilityCheck('Dex')
@@ -50,33 +46,33 @@ abilityCheck('Chr')
 abilityCheck('Int')
 abilityCheck('Wis')
 
-# checks -----------
 quickCheck()
+# checks -----------
 
 skillCheck(athletics) + char$abilityMods['Str']
 
 # lockpick
-r(r1d20) + char$abilityMods['Dex'] + char$proficiencyBonus
-skillCheck(acrobatics) + char$abilityMods['Dex']
-skillCheck(sleight) + char$abilityMods['Dex']
-skillCheck(stealth) + char$abilityMods['Dex']
+abilityCheck('Dex') +char$proficiencyBonus
+skillCheck(acrobatics) 
+skillCheck(sleight)
+skillCheck(stealth) 
 
-skillCheck(arcana) + char$abilityMods['Int']
-skillCheck(history) + char$abilityMods['Int']
-skillCheck(investigation) + char$abilityMods['Int']
-skillCheck(nature) + char$abilityMods['Int']
-skillCheck(religion) + char$abilityMods['Int']
+skillCheck(arcana)
+skillCheck(history) 
+skillCheck(investigation) 
+skillCheck(nature) 
+skillCheck(religion)
 
-skillCheck(animal) + char$abilityMods['Wis']
-skillCheck(insight) + char$abilityMods['Wis']
-skillCheck(medicine) + char$abilityMods['Wis']
-skillCheck(perception) + char$abilityMods['Wis']
-skillCheck(survival) + char$abilityMods['Wis']
+skillCheck(animal) 
+skillCheck(insight) 
+skillCheck(medicine)
+skillCheck(perception)
+skillCheck(survival)
 
-skillCheck(deception) + char$abilityMods['Chr']
-skillCheck(intimidation) + char$abilityMods['Chr']
-skillCheck(persuasion) + char$abilityMods['Chr']
-skillCheck(performance) + char$abilityMods['Chr']
+skillCheck(deception)
+skillCheck(intimidation)
+skillCheck(persuasion) 
+skillCheck(performance)
 
 
 
