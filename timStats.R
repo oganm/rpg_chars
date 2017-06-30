@@ -1,6 +1,7 @@
 library(reshape2)
 library(ggplot2)
 library(cowplot)
+library(magrittr)
 library(parallel)
 
 attackTest = function(AC,...){
@@ -48,9 +49,10 @@ dfAdv = data.frame(regularAdv= regularAdv,
                    sharpyAdv= sharpyAdv,
                    AC = 5:30) %>% reshape2::melt(id.vars = 'AC',value.name = 'damage')
 
-dfRegular %>% ggplot(aes(x =AC, y = damage, color = variable)) + geom_line() + ggtitle('Regular')
-dfAdv %>% ggplot(aes(x =AC, y = damage, color = variable)) + geom_line() +ggtitle('Advantage')
-dfDisadv %>% ggplot(aes(x =AC, y = damage, color = variable)) + geom_line() + ggtitle('Disadvantage')
+(dfRegular %>% ggplot(aes(x =AC, y = damage, color = variable)) + geom_line() + ggtitle('Regular')) %>%
+    ggsave(filename = 'regular.png')
+(dfAdv %>% ggplot(aes(x =AC, y = damage, color = variable)) + geom_line() +ggtitle('Advantage')) %>% ggsave(filename ='adv.png')
+(dfDisadv %>% ggplot(aes(x =AC, y = damage, color = variable)) + geom_line() + ggtitle('Disadvantage')) %>% ggsave(filename = 'disadv.png')
 
 data$AC[(data$sharpy - data$regular) < 0][1]
 data$AC[(data$sharpyAdv - data$regularAdv) < 0][1]
