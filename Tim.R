@@ -77,23 +77,33 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth - 14
-# 0d10 hit dice
+char$maxHealth
+# 3d10 hit dice
 
-# 
 # second wind +
 # d10+figter level
-r(r1d10) + 2
+r(r1d10) + 3
 
 # initiative --------------
 init()
 
+# action surge-----
+# +
+
+# superiority ------
+# 1d8 ++++
+# Trip: extra damage. prone on failed strength save. limit to large size
+# Precise: roll first, add dice to attack roll later
+# Menacing: extra damage, frightened on failed wis save
+8 + char$abilityMods[2] + char$proficiencyBonus # save
+r(r1d8)
+
 # attack --------------
-char$bolt = 17
+char$bolt = 202 
 char$arrow = 20
 
 # hand crossbow
-timAttack() 
+timAttack()
 timAttack(1)
 timAttack(-1)
 
@@ -133,7 +143,6 @@ r(r1d20)
 # 2 chainmail
 # 4 daggers
 # 2 longswords 
-# 4 gold
 
 # 15 sp 7 cp 
 # bone dice
@@ -151,9 +160,26 @@ r(r1d20)
 # demon statue
 # 2 keys on a keyring from the study.
 
+# compass 
+# 4 potion of retrograde memory loss
+# face masks 
+
+
+130/6
+
+20
+
+110/6
+
+
+
 # briar glen
 
 10/4
+
+
+# Fallback the sheep town
+15/5
 
 # Catrisca Giblari
 
