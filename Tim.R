@@ -77,12 +77,12 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth
-# 3d10 hit dice
+char$maxHealth -9-9 -9 -5 +6
+# 4d10 hit dice
 
-# second wind +
+# second wind 
 # d10+figter level
-r(r1d10) + 3
+r(r1d10) + 4
 
 # initiative --------------
 init()
@@ -130,6 +130,11 @@ timAttack(-1,damageDice = '1d8',ammo = 'arrow',sharpShoot = TRUE)
 r(r1d20)
 
 # loot -----------
+
+
+
+
+#######
 ###### wand of want not need
 ##### 20 gold
 ##### 30 gold
