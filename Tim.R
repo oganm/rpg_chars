@@ -1,6 +1,9 @@
 library(import5eChar)
 library(diceSyntax)
 
+options(httr_oob_default=TRUE) 
+drive_auth(new_user = TRUE) 
+
 char = importCharacter('Tim_Fighter')
 
 # by default the name getOption('defaultCharacter') returns 'char'.
@@ -48,7 +51,7 @@ abilityCheck('Wis')
 
 quickCheck()
 # checks -----------
-
+-
 skillCheck(athletics) + char$abilityMods['Str']
 
 # lockpick
@@ -77,7 +80,7 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth -9-9 -9 -5 +6
+char$maxHealth
 # 4d10 hit dice
 
 # second wind 
@@ -91,7 +94,7 @@ init()
 # +
 
 # superiority ------
-# 1d8 ++++
+# 1d8 +++
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
