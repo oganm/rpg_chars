@@ -51,11 +51,9 @@ abilityCheck('Wis')
 
 quickCheck()
 # checks -----------
--
-skillCheck(athletics) + char$abilityMods['Str']
+
 
 # lockpick
-abilityCheck('Dex') +char$proficiencyBonus
 skillCheck(acrobatics) 
 skillCheck(sleight)
 skillCheck(stealth) 
@@ -94,7 +92,7 @@ init()
 # +
 
 # superiority ------
-# 1d8 +++
+# 1d8 ++
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
@@ -102,15 +100,17 @@ init()
 r(r1d8)
 
 # attack --------------
-char$bolt = 202 
+char$bolt = 200 
 char$arrow = 20
 
 # hand crossbow
+timAttack(modToHit = 2+r(r1d4)) # bless
 timAttack()
 timAttack(1)
 timAttack(-1)
 
-timAttack(sharpShoot = TRUE)
+r(r1d4)
+timAttack(sharpShoot = TRUE,modToHit = 2+r(r1d4)) # bless
 timAttack(1,sharpShoot = TRUE)
 timAttack(-1,sharpShoot = TRUE)
 
@@ -148,15 +148,12 @@ r(r1d20)
 # warlock
 # weird bone thingy
 
-# 2 chainmail
-# 4 daggers
-# 2 longswords 
+# 2 daggers
 
 # 15 sp 7 cp 
 # bone dice
 # rat statue metal
 # demonically carved stuff
-# friendship bracelets
 # doll with one eye
 # spoon
 # weird mage
