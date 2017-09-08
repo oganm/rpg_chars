@@ -1,5 +1,6 @@
 library(import5eChar)
 library(diceSyntax)
+library(googledrive)
 
 options(httr_oob_default=TRUE) 
 drive_auth(new_user = TRUE) 
@@ -9,32 +10,6 @@ char = importCharacter('Tim_Fighter')
 # by default the name getOption('defaultCharacter') returns 'char'.
 # If another name is used use options(defaultCharacter = 'whatever') to set or manually
 # specify char when running functions
-
-timAttack = function(adv = 0,
-                     sharpShoot = F,
-                     attackStat = 'Dex',
-                     damageDice = '1d6',
-                     proficient = TRUE,
-                     modToHit = 2, # tim's archery
-                     modToDamage = 0,
-                     useAmmo = TRUE,
-                     ammo = 'bolt',
-                     vocal = TRUE,
-                     char = getOption('defaultCharacter')){
-    
-    attack(adv = adv,
-           sharpShoot = sharpShoot,
-           attackStat = attackStat,
-           damageDice = damageDice,
-           proficient = proficient,
-           modToHit = modToHit, # tim's archery
-           modToDamage = modToDamage,
-           useAmmo = useAmmo,
-           ammo = ammo,
-           vocal = vocal,
-           char = char)
-    
-}
 
 
 # ability scores ----------
@@ -49,11 +24,9 @@ abilityCheck('Chr')
 abilityCheck('Int')
 abilityCheck('Wis')
 
-quickCheck()
 # checks -----------
+quickCheck()
 
-
-# lockpick
 skillCheck(acrobatics) 
 skillCheck(sleight)
 skillCheck(stealth) 
@@ -100,35 +73,33 @@ init()
 r(r1d8)
 
 # attack --------------
+w = char$weapons
 char$bolt = 200 
 char$arrow = 20
 
-# hand crossbow
-timAttack(modToHit = 2+r(r1d4)) # bless
-timAttack()
-timAttack(1)
-timAttack(-1)
 
-r(r1d4)
-timAttack(sharpShoot = TRUE,modToHit = 2+r(r1d4)) # bless
-timAttack(1,sharpShoot = TRUE)
-timAttack(-1,sharpShoot = TRUE)
+# hand crossbow
+weaponAttack(w$`Crossbow, hand`,ammo = 'bolt')
+weaponAttack(w$`Crossbow, hand`,1,ammo = 'bolt')
+weaponAttack(w$`Crossbow, hand`,-1,ammo = 'bolt')
+
+weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'bolt')
+weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,1,ammo = 'bolt')
+weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,-1,ammo = 'bolt')
 
 # dagger
-timAttack(damageDice= '1d4',useAmmo = FALSE,modToHit = 0)
-timAttack(1,damageDice= '1d4',useAmmo = FALSE,modToHit = 0)
-timAttack(-1,damageDice= '1d4',useAmmo = FALSE,modToHit = 0)
+weaponAttack(w$Dagger)
+weaponAttack(w$Dagger,1)
+weaponAttack(w$Dagger,-1)
 
 # longbow
-timAttack(damageDice = '1d8',ammo = 'arrow')
-timAttack(1,damageDice = '1d8',ammo = 'arrow')
-timAttack(-1,damageDice = '1d8',ammo = 'arrow')
+weaponAttack(w$Longbow,useAmmo = TRUE,ammo = 'arrow')
+weaponAttack(w$Longbow,1,useAmmo = TRUE,ammo = 'arrow')
+weaponAttack(w$Longbow,-1,useAmmo = TRUE,ammo = 'arrow')
 
-timAttack(damageDice = '1d8',ammo = 'arrow',sharpShoot = TRUE)
-timAttack(1,damageDice = '1d8',ammo = 'arrow',sharpShoot = TRUE)
-timAttack(-1,damageDice = '1d8',ammo = 'arrow',sharpShoot = TRUE)
-
-
+weaponAttack(w$Longbow,sharpShoot = TRUE,ammo = 'arrow')
+weaponAttack(w$Longbow,1,sharpShoot = TRUE,ammo = 'arrow')
+weaponAttack(w$Longbow,-1,sharpShoot = TRUE,ammo = 'arrow')
 
 r(r1d20)
 
@@ -170,24 +141,13 @@ r(r1d20)
 # face masks 
 
 
-130/6
-
-20
-
-110/6
-
 
 
 # briar glen
 
-10/4
 
 
 # Fallback the sheep town
-15/5
 
 # Catrisca Giblari
 
-(20 +30 +2 +2)/4
-
-13.5 + 0.25
