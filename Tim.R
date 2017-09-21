@@ -4,7 +4,7 @@ library(googledrive)
 
 options(httr_oob_default=TRUE) 
 drive_auth(new_user = TRUE) 
-
+import5eChar:::processCharacter
 char = importCharacter('Tim_Fighter')
 
 # by default the name getOption('defaultCharacter') returns 'char'.
@@ -52,11 +52,11 @@ skillCheck(performance)
 
 # health ------------
 char$maxHealth
-# 4d10 hit dice
+# 5d10 hit dice
 
 # second wind 
 # d10+figter level
-r(r1d10) + 4
+r(r1d10) + 5
 
 # initiative --------------
 init()
@@ -65,7 +65,7 @@ init()
 # +
 
 # superiority ------
-# 1d8 ++
+# 1d8 ++++
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
@@ -74,14 +74,20 @@ r(r1d8)
 
 # attack --------------
 w = char$weapons
-char$bolt = 200 
+char$adaBolt = 10
+char$bolt = 290 
 char$arrow = 20
 
 
 # hand crossbow
+weaponAttack(w$`Crossbow, hand`,ammo = 'adaBolt')
+
+
 weaponAttack(w$`Crossbow, hand`,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,1,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,-1,ammo = 'bolt')
+
+weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'adaBolt')
 
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,1,ammo = 'bolt')
@@ -104,17 +110,54 @@ weaponAttack(w$Longbow,-1,sharpShoot = TRUE,ammo = 'arrow')
 r(r1d20)
 
 # loot -----------
+17 + 13.5 +32 +
+    35 - 5 -2 -5 -
+    10 -5 - 25 -
+    0.2 -45 + 5 +
+    4 -5 + 20 +
+    18.33 + 20 - 
+    25 - 10 -5 + 
+    22.4 + 3 + 5 + 
+    1.2 - 25 + 2.5 -
+    5 - 0.05 - 0.05 +5 +1.475 +15
+
+"
+backpack								
+crowbar x 1								
+hammer								
+10 pitons								
+10 torches								
+Tinderbox								
+10 days of Rations								
+Waterskin								
+50 feet of Hempen rope								
+ball bearings								
+hunting trap								
+caltrops								
+flask								
+hooded lantern	
+john's portrait
+adamantine bolt * 10
 
 
 
+leather armor								
+dark common clothes								
+hood								
+playing card set								
+vials								
+cloak of elvenkind								
+Belt Pouch								
+manacles								
+mirror steel								
+lock								
+grappling hook								
+thieves tools								
+
+chalk
 
 #######
 ###### wand of want not need
-##### 20 gold
-##### 30 gold
-###### 2 gold
-##### 10 silver
-
 
 # warlock
 # weird bone thingy
@@ -151,3 +194,7 @@ r(r1d20)
 
 # Catrisca Giblari
 
+wealthy district protectors
+===========
+hoselo,
+"
