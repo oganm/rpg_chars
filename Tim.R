@@ -3,8 +3,7 @@ library(diceSyntax)
 library(googledrive)
 
 options(httr_oob_default=TRUE) 
-drive_auth(new_user = TRUE) 
-import5eChar:::processCharacter
+drive_auth() 
 char = importCharacter('Tim_Fighter')
 
 # by default the name getOption('defaultCharacter') returns 'char'.
@@ -56,7 +55,7 @@ char$maxHealth
 
 # second wind 
 # d10+figter level
-r(r1d10) + 5
+r(r1d10) + 6
 
 # initiative --------------
 init()
@@ -65,7 +64,7 @@ init()
 # +
 
 # superiority ------
-# 1d8 ++++
+# 1d8 +++
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
@@ -75,8 +74,9 @@ r(r1d8)
 # attack --------------
 w = char$weapons
 char$adaBolt = 10
-char$bolt = 290 
+char$bolt = 284 
 char$arrow = 20
+char$sling = 20
 
 
 # hand crossbow
@@ -87,7 +87,9 @@ weaponAttack(w$`Crossbow, hand`,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,1,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,-1,ammo = 'bolt')
 
+weaponAttack(w$`Crossbow, hand`,sharpShoot = FALSE,ammo = 'adaBolt')
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'adaBolt')
+weaponAttack(w$`Crossbow, hand`,1,sharpShoot = TRUE,ammo = 'adaBolt')
 
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,1,ammo = 'bolt')
@@ -107,6 +109,15 @@ weaponAttack(w$Longbow,sharpShoot = TRUE,ammo = 'arrow')
 weaponAttack(w$Longbow,1,sharpShoot = TRUE,ammo = 'arrow')
 weaponAttack(w$Longbow,-1,sharpShoot = TRUE,ammo = 'arrow')
 
+# sling
+weaponAttack(w$Sling,useAmmo = TRUE,ammo = 'sling')
+weaponAttack(w$Sling,1,useAmmo = TRUE,ammo = 'sling')
+weaponAttack(w$Sling,-1,useAmmo = TRUE,ammo = 'sling')
+
+weaponAttack(w$Sling,sharpShoot = TRUE,ammo = 'sling')
+weaponAttack(w$Sling,1,sharpShoot = TRUE,ammo = 'sling')
+weaponAttack(w$Sling,-1,sharpShoot = TRUE,ammo = 'sling')
+
 r(r1d20)
 
 # loot -----------
@@ -119,7 +130,7 @@ r(r1d20)
     25 - 10 -5 + 
     22.4 + 3 + 5 + 
     1.2 - 25 + 2.5 -
-    5 - 0.05 - 0.05 +5 +1.475 +15
+    5 - 0.05 - 0.05 +5 +1.475 +15 + 100 -60 + 20 + 6 - .01
 
 "
 backpack								
