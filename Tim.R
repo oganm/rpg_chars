@@ -1,10 +1,12 @@
 library(import5eChar)
 library(diceSyntax)
 library(googledrive)
+library(stringr)
 
 options(httr_oob_default=TRUE) 
 drive_auth() 
 char = importCharacter('Tim_Fighter')
+w = char$weapons
 
 # by default the name getOption('defaultCharacter') returns 'char'.
 # If another name is used use options(defaultCharacter = 'whatever') to set or manually
@@ -50,12 +52,13 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth
+char$maxHealth - 7 -16 + 8
 # 5d10 hit dice
 
 # second wind 
 # d10+figter level
-r(r1d10) + 6
+r(r1d10) + as.integer(str_extract(char$ClassField,'[0-9]+'))
+AC()
 
 # initiative --------------
 init()
@@ -64,7 +67,7 @@ init()
 # +
 
 # superiority ------
-# 1d8 +++
+# 1d8 ++
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
@@ -86,10 +89,6 @@ weaponAttack(w$`Crossbow, hand`,ammo = 'adaBolt')
 weaponAttack(w$`Crossbow, hand`,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,1,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,-1,ammo = 'bolt')
-
-weaponAttack(w$`Crossbow, hand`,sharpShoot = FALSE,ammo = 'adaBolt')
-weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'adaBolt')
-weaponAttack(w$`Crossbow, hand`,1,sharpShoot = TRUE,ammo = 'adaBolt')
 
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,1,ammo = 'bolt')
