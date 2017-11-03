@@ -1,10 +1,12 @@
 library(import5eChar)
 library(diceSyntax)
 library(googledrive)
+library(monsteR)
+library(wizaRd)
 library(stringr)
 
-options(httr_oob_default=TRUE) 
-drive_auth() 
+# options(httr_oob_default=TRUE) 
+# drive_auth() 
 char = importCharacter('Tim_Fighter')
 w = char$weapons
 
@@ -52,7 +54,7 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth - 7 -16 + 8
+char$maxHealth - 7 -16 + 8 -6 -7 +14
 # 5d10 hit dice
 
 # second wind 
@@ -63,11 +65,12 @@ AC()
 # initiative --------------
 init()
 
+char$resources
 # action surge-----
 # +
 
 # superiority ------
-# 1d8 ++
+# 1d8 ++++/5
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
@@ -77,7 +80,7 @@ r(r1d8)
 # attack --------------
 w = char$weapons
 char$adaBolt = 10
-char$bolt = 284 
+char$bolt = 281
 char$arrow = 20
 char$sling = 20
 
@@ -94,28 +97,38 @@ weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,1,ammo = 'bolt')
 weaponAttack(w$`Crossbow, hand`,sharpShoot = TRUE,-1,ammo = 'bolt')
 
+# sling
+weaponAttack(w$Sling,ammo = 'sling')
+weaponAttack(w$Sling,1,ammo = 'sling')
+weaponAttack(w$Sling,-1,ammo = 'sling')
+
+weaponAttack(w$Sling,sharpShoot = TRUE,ammo = 'sling')
+weaponAttack(w$Sling,1,sharpShoot = TRUE,ammo = 'sling')
+weaponAttack(w$Sling,-1,sharpShoot = TRUE,ammo = 'sling')
+
+
 # dagger
 weaponAttack(w$Dagger)
 weaponAttack(w$Dagger,1)
 weaponAttack(w$Dagger,-1)
 
+weaponAttack(w$Dagger)
+weaponAttack(w$Dagger,1)
+weaponAttack(w$Dagger,-1)
+
+weaponAttack(w$`Greatsword Of Life`)
+weaponAttack(w$`Greatsword Of Life`,1)
+weaponAttack(w$`Greatsword Of Life`,-1)
+
 # longbow
-weaponAttack(w$Longbow,useAmmo = TRUE,ammo = 'arrow')
-weaponAttack(w$Longbow,1,useAmmo = TRUE,ammo = 'arrow')
-weaponAttack(w$Longbow,-1,useAmmo = TRUE,ammo = 'arrow')
+weaponAttack(w$Longbow,ammo = 'arrow')
+weaponAttack(w$Longbow,1,ammo = 'arrow')
+weaponAttack(w$Longbow,-1,ammo = 'arrow')
 
 weaponAttack(w$Longbow,sharpShoot = TRUE,ammo = 'arrow')
 weaponAttack(w$Longbow,1,sharpShoot = TRUE,ammo = 'arrow')
 weaponAttack(w$Longbow,-1,sharpShoot = TRUE,ammo = 'arrow')
 
-# sling
-weaponAttack(w$Sling,useAmmo = TRUE,ammo = 'sling')
-weaponAttack(w$Sling,1,useAmmo = TRUE,ammo = 'sling')
-weaponAttack(w$Sling,-1,useAmmo = TRUE,ammo = 'sling')
-
-weaponAttack(w$Sling,sharpShoot = TRUE,ammo = 'sling')
-weaponAttack(w$Sling,1,sharpShoot = TRUE,ammo = 'sling')
-weaponAttack(w$Sling,-1,sharpShoot = TRUE,ammo = 'sling')
 
 r(r1d20)
 
@@ -129,9 +142,12 @@ r(r1d20)
     25 - 10 -5 + 
     22.4 + 3 + 5 + 
     1.2 - 25 + 2.5 -
-    5 - 0.05 - 0.05 +5 +1.475 +15 + 100 -60 + 20 + 6 - .01
+    5 - 0.05 - 0.05 +5 +
+    1.475 +15 + 100 -60 +
+    20 + 6 - .01 -.02
 
 "
+copper whale
 backpack								
 crowbar x 1								
 hammer								
