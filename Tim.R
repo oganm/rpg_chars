@@ -54,8 +54,9 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth - 7 -16 + 8 -6 -7 +14
-# 5d10 hit dice
+char$maxHealth - 20 + 15
+# ++++/7d10 hit dice
+r(r1d10) + char$abilityMods['Con']
 
 # second wind 
 # d10+figter level
@@ -70,10 +71,13 @@ char$resources
 # +
 
 # superiority ------
-# 1d8 ++++/5
+# 1d8 +++++/5
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
+# Reposition: extra damage, half speed ally move
+# Evade: Dice to AC when moving
+# Disarm: Str save or drop weapon.
 8 + char$abilityMods[2] + char$proficiencyBonus # save
 r(r1d8)
 
