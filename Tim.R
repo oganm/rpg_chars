@@ -54,7 +54,7 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth - 20 + 15
+char$maxHealth - 20 + 15 -13 -4-7-7 +15 -1-6 -13 -13 - 13 + 10
 # ++++/7d10 hit dice
 r(r1d10) + char$abilityMods['Con']
 
@@ -68,10 +68,10 @@ init()
 
 char$resources
 # action surge-----
-# +
+# 
 
 # superiority ------
-# 1d8 +++++/5
+# 1d8 /5
 # Trip: extra damage. prone on failed strength save. limit to large size
 # Precise: roll first, add dice to attack roll later
 # Menacing: extra damage, frightened on failed wis save
@@ -84,8 +84,8 @@ r(r1d8)
 # attack --------------
 w = char$weapons
 char$adaBolt = 10
-char$bolt = 281
-char$arrow = 20
+char$bolt = 275
+char$arrow = 12
 char$sling = 20
 
 
@@ -148,9 +148,15 @@ r(r1d20)
     1.2 - 25 + 2.5 -
     5 - 0.05 - 0.05 +5 +
     1.475 +15 + 100 -60 +
-    20 + 6 - .01 -.02
+    20 + 6 - .01 -.02 +200
+
+# 127/4 silver shrubles
 
 "
+1 silver necklace (11 g)
+
+
+
 copper whale
 backpack								
 crowbar x 1								
