@@ -54,7 +54,7 @@ skillCheck(performance)
 
 
 # health ------------
-char$maxHealth - 20 + 15 -13 -4-7-7 +15 -1-6 -13 -13 - 13 + 10
+char$maxHealth
 # ++++/7d10 hit dice
 r(r1d10) + char$abilityMods['Con']
 
@@ -148,14 +148,19 @@ r(r1d20)
     1.2 - 25 + 2.5 -
     5 - 0.05 - 0.05 +5 +
     1.475 +15 + 100 -60 +
-    20 + 6 - .01 -.02 +200
+    20 + 6 - .01 -.02 +200 - 
+    40 -50 + 1 -25 - 50 + 500 -200
 
 # 127/4 silver shrubles
 
 "
+giant scorpion venom 4d10
+
+greater healing 4d4 + 4
+
 1 silver necklace (11 g)
 
-
+rod of water finding thingy
 
 copper whale
 backpack								
