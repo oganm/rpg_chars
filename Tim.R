@@ -120,9 +120,6 @@ weaponAttack(w$Dagger)
 weaponAttack(w$Dagger,1)
 weaponAttack(w$Dagger,-1)
 
-weaponAttack(w$`Greatsword Of Life`)
-weaponAttack(w$`Greatsword Of Life`,1)
-weaponAttack(w$`Greatsword Of Life`,-1)
 
 # longbow
 weaponAttack(w$Longbow,ammo = 'arrow')
@@ -149,16 +146,21 @@ r(r1d20)
     5 - 0.05 - 0.05 +5 +
     1.475 +15 + 100 -60 +
     20 + 6 - .01 -.02 +200 - 
-    40 -50 + 1 -25 - 50 + 500 -200
+    40 -50 + 1 -25 - 50 + 500 -200 - 50 + 650
 
 # 127/4 silver shrubles
 
 "
-giant scorpion venom 4d10
+a bag of gems
+{
+    2 red, 2x brown green,1 violet 
+}
+
+
+giant scorpion venom 4d10 DC 12 * 2 
 
 greater healing 4d4 + 4
 
-1 silver necklace (11 g)
 
 rod of water finding thingy
 
@@ -178,7 +180,6 @@ caltrops
 flask								
 hooded lantern	
 john's portrait
-adamantine bolt * 10
 
 
 
