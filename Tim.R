@@ -146,11 +146,20 @@ r(r1d20)
     5 - 0.05 - 0.05 +5 +
     1.475 +15 + 100 -60 +
     20 + 6 - .01 -.02 +200 - 
-    40 -50 + 1 -25 - 50 + 500 -200 - 50 + 650
+    40 -50 + 1 -25 - 50 + 500 -
+    200 - 50 + 650 - 100 -550 - 15*5 -
+    3*20 + 
+    100 + 2/5
 
 # 127/4 silver shrubles
 
 "
+longbow of flying
+
+5  all weather flares
+
+gems of cold, lightning or acid 1 each
+
 a bag of gems
 {
     2 red, 2x brown green,1 violet 
