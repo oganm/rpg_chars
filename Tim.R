@@ -149,11 +149,14 @@ r(r1d20)
     40 -50 + 1 -25 - 50 + 500 -
     200 - 50 + 650 - 100 -550 - 15*5 -
     3*20 + 
-    100 + 2/5
+    100 + 2/5 + 10000/5
 
 # 127/4 silver shrubles
 
 "
+Gloves of Swimming and Climbing
+ climbing and swimming don't cost you extra Movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.
+
 longbow of flying
 
 5  all weather flares
