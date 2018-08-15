@@ -55,7 +55,7 @@ skillCheck(performance)
 
 # health ------------
 char$maxHealth
-# ++++/7d10 hit dice
+# 7d10/11 1d8/1
 r(r1d10) + char$abilityMods['Con']
 
 # second wind 
@@ -149,11 +149,22 @@ r(r1d20)
     40 -50 + 1 - 25 - 50 + 500 -
     200 - 50 + 650 - 100 -550 - 15*5 -
     3*20 + 
-    100 + 2/5 + 10000/5 - 120
+    100 + 2/5 + 10000/5 - 120 + 400 + 200 - 200 -
+    400 - 60 - 15 - 30 + 1800/5
+    
 
 # 127/4 silver shrubles
 
 "
+1 unit of ointment 2d8+ 2 HP
+ceases to be poisoned, and is cured of any disease. 
+
+rod of immovabiliy
+instrument of scribing
+Helm of comprehending languages (200 GP)
+Stone of true strike 
+Jousting knights 
+
 Gloves of Swimming and Climbing
  climbing and swimming don't cost you extra Movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.
 
