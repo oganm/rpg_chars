@@ -150,12 +150,24 @@ r(r1d20)
     200 - 50 + 650 - 100 -550 - 15*5 -
     3*20 + 
     100 + 2/5 + 10000/5 - 120 + 400 + 200 - 200 -
-    400 - 60 - 15 - 30 + 1800/5
+    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -40 -25
     
 
 # 127/4 silver shrubles
 
 "
+tarantula venom muscle spasms 
+giant jumping spider venom hallucinagenic
+phase spider poison 
+
+distractaton
+
+CLOCKWORK AMULET
+
+
+cloak of elvenkind								
+
+
 1 unit of ointment 2d8+ 2 HP
 ceases to be poisoned, and is cured of any disease. 
 
@@ -211,7 +223,6 @@ dark common clothes
 hood								
 playing card set								
 vials								
-cloak of elvenkind								
 Belt Pouch								
 manacles								
 mirror steel								
