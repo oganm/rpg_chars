@@ -150,12 +150,14 @@ r(r1d20)
     200 - 50 + 650 - 100 -550 - 15*5 -
     3*20 + 
     100 + 2/5 + 10000/5 - 120 + 400 + 200 - 200 -
-    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -40 -25
+    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -40 -25 + 400/3 +300/3
     
 
 # 127/4 silver shrubles
 
 "
+
+
 tarantula venom muscle spasms 
 giant jumping spider venom hallucinagenic
 phase spider poison 
