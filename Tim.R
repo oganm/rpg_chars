@@ -150,18 +150,29 @@ r(r1d20)
     200 - 50 + 650 - 100 -550 - 15*5 -
     3*20 + 
     100 + 2/5 + 10000/5 - 120 + 400 + 200 - 200 -
-    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -40 -25 + 400/3 +300/3
+    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -
+    40 -25 + 400/3 +300/3 -8 + 500/4 +100
     
 
 # 127/4 silver shrubles
 
 "
+Wondrous Item, Very Rare (requires attunement)
+
+This fine garment is made of black silk interwoven with faint silvery threads. While wearing it, you gain the following benefits:
+
+You have resistance to poison damage.
+You have a climbing speed equal to your walking speed.
+You can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.
+You can't be caught in webs of any sort and can move through webs as if they were difficult terrain.
+You can use an action to cast the web spell (save DC 13). The web created by the spell fills twice its normal area. Once used, this property of the cloak can't be used again until the next dawn.
+clibming speed equal to waling. move up down accro
+
 
 
 tarantula venom muscle spasms 
 giant jumping spider venom hallucinagenic
 phase spider poison 
-
 distractaton
 
 CLOCKWORK AMULET
@@ -187,11 +198,6 @@ longbow of flying
 5  all weather flares
 
 gems of cold, lightning or acid 1 each
-
-a bag of gems
-{
-    2 red, 2x brown green,1 violet 
-}
 
 
 giant scorpion venom 4d10 DC 12 * 2 
