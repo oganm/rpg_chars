@@ -151,12 +151,15 @@ r(r1d20)
     3*20 + 
     100 + 2/5 + 10000/5 - 120 + 400 + 200 - 200 -
     400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -
-    40 -25 + 400/3 +300/3 -8 + 500/4 +100
+    40 -25 + 400/3 +300/3 -8 + 500/4 +100 - 75+ 76/3
     
 
 # 127/4 silver shrubles
 
+
 "
+CLOAK OF ARACHNIDA
+
 Wondrous Item, Very Rare (requires attunement)
 
 This fine garment is made of black silk interwoven with faint silvery threads. While wearing it, you gain the following benefits:
@@ -188,7 +191,6 @@ rod of immovabiliy
 instrument of scribing
 Helm of comprehending languages (200 GP)
 Stone of true strike 
-Jousting knights 
 
 Gloves of Swimming and Climbing
  climbing and swimming don't cost you extra Movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.
@@ -201,8 +203,6 @@ gems of cold, lightning or acid 1 each
 
 
 giant scorpion venom 4d10 DC 12 * 2 
-
-greater healing 4d4 + 4
 
 
 rod of water finding thingy
