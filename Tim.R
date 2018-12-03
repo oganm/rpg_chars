@@ -150,17 +150,38 @@ r(r1d20)
     200 - 50 + 650 - 100 -550 - 15*5 -
     3*20 + 
     100 + 2/5 + 10000/5 - 120 + 400 + 200 - 200 -
-    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35 -
-    40 -25 + 400/3 +300/3 -8 + 500/4 +100 - 75+ 76/3
+    400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35  + 
+    40 -25 + 400/3 +300/3 -8 + 500/4 +100 - 75+ 76/3  + 20000/4 -400 -20 - 600 -20 - 100 -100 - 35 -300
     
 
 # 127/4 silver shrubles
 
 
 "
+magic detection mist 
+
+googles of night
+
+ring of warmth (requires attunement) *****************
+
+
+bead of nourishement
+only self open coin purse
+
+lantern of revealing
+reveal invisible 30 feet 60 feet light
+
+
+
+shield of victory (attunement)
+=================
+kills a creature wearing the armor equal to the CR +1
+
+
+
 CLOAK OF ARACHNIDA
 
-Wondrous Item, Very Rare (requires attunement)
+Wondrous Item, Very Rare (requires attunement) ******************
 
 This fine garment is made of black silk interwoven with faint silvery threads. While wearing it, you gain the following benefits:
 
@@ -181,7 +202,7 @@ distractaton
 CLOCKWORK AMULET
 
 
-cloak of elvenkind								
+cloak of elvenkind (attunement)					
 
 
 1 unit of ointment 2d8+ 2 HP
@@ -192,7 +213,7 @@ instrument of scribing
 Helm of comprehending languages (200 GP)
 Stone of true strike 
 
-Gloves of Swimming and Climbing
+Gloves of Swimming and Climbing (attunement)**************
  climbing and swimming don't cost you extra Movement, and you gain a +5 bonus to Strength (Athletics) checks made to climb or swim.
 
 longbow of flying
