@@ -21,13 +21,34 @@
     400 - 60 - 15 - 30 + 1800/5 -200 - 600 -10 -35  + 
     40 -25 + 400/3 +300/3 -8 + 500/4 +100 - 75+ 76/3  +
     20000/4 -400 -20 - 600 -20 - 100 -100 - 35 -300 - 3 -
-    50*20 -11 -20 - 50*10 - 30*50
+    50*20 -11 -20 - 50*10 - 30*50 + 8000/4
     
 
 # 127/4 silver shrubles
 
 
 "
+Brass Framed Painting (750 gp)
+Silver Cloth Tabard (750 gp)
+Bolt of Electrum Cloth (750 gp)
+Bolt of Silver Cloth (750 gp)
+Chrysoprase Mask inlaid with Platinum (750 gp)
+Ermine Hunter's Cap inlaid with Gold (750 gp)
+Citrine Vase (750 gp)
+Spell Scroll (Protection from Evil and Good) (common, dmg 200)
+Spell Scroll (Aid) (uncommon, dmg 200)
++1 Ammunition (20 sling bullets) (uncommon, dmg 150), 
+Oil of Slipperiness (uncommon, dmg 184)
+
+
+
+Spell Scroll (Protection from Evil and Good) 
+
+Ammunition (20 sling bullets) 
+
+
+
+
 50 10 gold gem
 30 50 gold
 
