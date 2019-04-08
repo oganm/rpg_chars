@@ -28,7 +28,9 @@
 
 
 "
-Brass Framed Painting (750 gp)
+Brass Framed Painting (750 gp) -> 750 tokens
+
+
 Silver Cloth Tabard (750 gp)
 Bolt of Electrum Cloth (750 gp)
 Bolt of Silver Cloth (750 gp)
