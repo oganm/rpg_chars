@@ -19,6 +19,8 @@
 50*4
 
 "
+ritual dagger of godkilling
+
 orb of direction
 armband of arm wrestling
 
