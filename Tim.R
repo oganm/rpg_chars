@@ -51,11 +51,10 @@ Ammunition (20 sling bullets)
 30 50 gold
 
 
-4 healer's kits
+4 healer's kits -
 silk rope
 hempen rope 50 feet
 3 bells
-20 healing potions 2d4+2
 
 magic detection mist 
 
