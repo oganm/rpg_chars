@@ -10,6 +10,9 @@
 
 
 "
+-10 lay on hands
+-1 lvl 1 spell slots
+
 goblet 20 gold
 10 gold
 
@@ -17,11 +20,10 @@ goblet 20 gold
 ball bearings
 mirror
 • a Backpack
-• a Crowbar
-• a Hammer
-• 10 pitons
-• 10 torches
+• a Bedroll
+• a Mess kit
 • a Tinderbox
+• 10 torches
 • 10 days of Rations
 • a Waterskin
 • 50 feet of Hempen rope
