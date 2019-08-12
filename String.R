@@ -10,6 +10,19 @@
 
 
 "
+The stuff you found in the rubble: a damaged book written in a language you don't know,
+a mortar and pestle, and the rotten remains of a walking stick 
+with multiple things tied onto the top: a broken bone, tied up pouch, more rotten wood, 
+
+
+1 10 gold gemstone
+
+
+vakai
+vakaki
+ritual sacrifice stuff
+religious text
+
 -10 lay on hands
 -1 lvl 1 spell slots
 
@@ -31,3 +44,50 @@ mirror
 Manacles
 bell
 "
+
+"X = block      
+XX = sacrifice 
+/// =air          flute
+<> = fire         lit twig
+~ = water         water puch
+delta = earty     gems
+O = healing moss
+downdown = minor sacrifice
+plusplus = poisinous Plan"
+
+"
+21 = block + ? + in +  sacrifice                 bar access
+20 = Mix + air + in + sacrifice                          unkown
+28 = ? + moss + water + sacrifice                 healing
+32 = mix + ? + ? + out + majorSac                 better healing
+33 = mix + moss + ? + in + majorSac
+? = in + poison + out + air                      commune with dead
+8 = out + fire                                   burning hands
+? = mix + poison + out + ?                       toxic liquid
+14 = mix + water + ? (max 8, min 5)                            water bending
+25 = ? + mix + fire + ? + majorSac               unleash wrath of the bound one
+42 = ? + fire + in + earth  + ? + ?              
+? = out + water + in + ? + majorSac
+
+
+all <= 12
+block, in, out,  mix <= 4
+rest >= 5
+
+5 <= fire <= 7
+5 <= water <=8
+5 <= air <= 12
+
+
+intution
+===============
+block = mix + 1
+
+
+out fire
+1   7
+2   6  
+3   4
+4   5
+
+"   
