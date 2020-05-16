@@ -6,13 +6,38 @@
     10 -  # shield
     15  - # forgery kit
     20 -# smith's tools
-    5 # herbalism kit
+    5 - # herbalism kit
+    1 -# ball bearings
+    1 # caltrops
 
 
-8*15
+# Scrap weight
+
+8*15 -
+    45 - # scale mail
+    1 - # belt pouch
+    3 - # clothes
+    5 -# waterskin
+    10 -# rope
+    1.5 -# bolts
+    1 -# thieve's 
+    5 -# backpack
+    5 -# crowbar
+    1 -# hammer
+    2.5 - # pitons
+    10 -# torches
+    1 -# tinderbox
+    3 -  # herbalism
+    5 -# forgery
+    8 # smiths
+
+
+# Scruffles weight
+14*15 
 
 "
 Scale mail
+
 
 backpack
 a crowbar
@@ -36,11 +61,14 @@ herbalism kit
 
 whip infused +1
 shield infused +1
+ball bearings: 10 feet DC 10 dex prone
+caltrops: 5 feet DC 15 dex 
 "
 
 "
 tobuy
 =======
+extra backback for scruffles
 tinker's kit
 carpenter's tools
 hand crossbow
