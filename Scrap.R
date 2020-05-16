@@ -37,3 +37,13 @@ herbalism kit
 whip infused +1
 shield infused +1
 "
+
+"
+tobuy
+=======
+tinker's kit
+carpenter's tools
+hand crossbow
+half plate/breastplate
+armblade of sorts
+"
