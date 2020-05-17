@@ -68,10 +68,10 @@ caltrops: 5 feet DC 15 dex
 "
 tobuy
 =======
-extra backback for scruffles
-tinker's kit
-carpenter's tools
-hand crossbow
-half plate/breastplate
-armblade of sorts
+extra backback for scruffles 2
+tinker's kit 50
+carpenter's tools 8
+hand crossbow 75
+half plate/breastplate 750/400
+ruby for continual flame 50
 "
