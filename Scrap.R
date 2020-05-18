@@ -36,6 +36,35 @@
 14*15 
 
 "
+August 17 Council
+
+
+
+
+- Dorian used to be nice now he's an asshole. But people change
+- Theodas was with Dorian till 20 years ago. Dorian was 5. Now 15. Purge was when he was 12. There is a court alchemist.
+- Religious advisor
+- No court spymaster
+- Possible court librarian
+- Advisors are from Uncle. Rough around the edges. Seems ok
+- the king and queen got attacked by a manticore and killed and entered war
+
+
+- Princess. conditions of death unceartain
+- murder of the princess was the casus belli
+
+
+wolf east of free marshes 
+challice. faith of lyr
+
+
+contact at emprys not a kingmaker
+
+big ball at emprys can get us invites
+
+"
+
+"
 Scale mail
 
 
