@@ -14,7 +14,7 @@
     50 -  # base weeks
     1 - 25 - 200 + 10/5 +
     2150/5 + # cloak and staff and gems
-    240  + 60 
+    240  + 60 + 40
 
 
 # HP
@@ -51,6 +51,13 @@
 
 
 "
+Xorlarrin
+Zinrel is from T'u Lung place with the God King
+other fellow is from Shou lung, taiwan of t'u lung
+T'u Lung/Shou Lung 
+
+
+
 2d10 5d8 hit die
 
 doppleganger name adkalskdalkd
