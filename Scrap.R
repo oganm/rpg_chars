@@ -104,3 +104,43 @@ hand crossbow 75
 half plate/breastplate 750/400
 ruby for continual flame 50
 "
+
+"
+lvl 2
+defense *
+weapon  *
+jug
+bag
+
+
+lvl 6
+jug
+bag
+cloak of the elvenkind ~
+radiant weapon * 
+defense * ~
+Lantern of Revealing
+
+lvl 10
+jug
+bag
+defense *
+weapon/radiant weapon? *
+Lantern of Revealing
+Cloak of Protection
+Winged Boots *
+Gauntlets of Ogre Power *
+
+lvl 14
+jug 
+bag
+defense * *
+weapon/radiant weapon? *
+lantern of revealing
+cloack of protection 
+winged boots *
+Belt of Hill Giant Strength * 
+gem of seeing
+Eyes of the Eagle
+
+"
