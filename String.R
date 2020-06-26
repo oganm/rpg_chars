@@ -14,7 +14,7 @@
     50 -  # base weeks
     1 - 25 - 200 + 10/5 +
     2150/5 + # cloak and staff and gems
-    240  + 60 + 4029/2
+    240  + 60 + 4029/2 + 200/5 + 10/5
 
 
 
@@ -47,11 +47,14 @@
     5 - # Block and Tackle
     12 - # climber's kit
     1.5 - # potion of healing
-    0 
+    0
 
 
 
 "
+shitloads of fancy clothes
+
+
 Xorlarrin
 Zinrel is from T'u Lung place with the God King
 other fellow is from Shou lung, taiwan of t'u lung

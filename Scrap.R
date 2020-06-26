@@ -10,7 +10,10 @@
     1 -# ball bearings
     1 + # caltrops 
     300/6 -
-    30/6
+    30/6 + 
+    166.666666666666666666666666 - 
+    20  # halberd
+
 
 
 # Scrap weight
@@ -31,76 +34,27 @@
     1 -# tinderbox
     3 -  # herbalism
     5 -# forgery
-    8 # smiths
+    8 -  # smiths
+    6 # halberd
 
 
 # Scruffles weight
 14*15 
 
+
+
 "
+23 HP
+-1 lvl 1 slot
+
 3 acid vials
+
+halberd
 
 flag of empris
 
 goblets with divets 
 4 gems paranoia 1 hour, heal 2d8, hurt 2d10, silence 1 hour remove curse
-
-Bertand blackmail
-
-general threatening the captain
-
-captain claimed he didn't know who to trust. but general seems to have received a report.
-
-winter crush on captain. 
-
-canary mines in republic celedon family in empris
-
-Presumably august 18-19 the day we talked to Bertrand
-
-shitty handwriting at Dreyan thugs. she's not supposed to talk
-
-August 17 Council
-
-
-black pomegranate oil. manticore poison has simillar symptoms
-
-lots of mythril
-
-low dose symptoms
-------------------
-skin hair lose color
-fatigue
-reasoning gone
-muscle defitinion loss
-
-employer of goblin mid 30s dark hair gray eyes guard probably Bertrand
-
-
-- Dorian used to be nice now he's an asshole. But people change
-- Theodas was with Dorian till 20 years ago. Dorian was 5. Now 15. Purge was when he was 12. There is a court alchemist.
-- Religious advisor
-- No court spymaster
-- Possible court librarian
-- Advisors are from Uncle. Rough around the edges. Seems ok
-- the king and queen got attacked by a manticore and killed and entered war
-
-
-- Princess. conditions of death unceartain
-- murder of the princess was the casus belli
-
-
-wolf east of free marshes 
-challice. faith of lyr
-
-
-contact at emprys not a kingmaker
-
-big ball at emprys can get us invites
-
-"
-
-"
-
 
 Scale mail
 
