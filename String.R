@@ -14,9 +14,9 @@
     50 -  # base weeks
     1 - 25 - 200 + 10/5 +
     2150/5 + # cloak and staff and gems
-    240  + 60 + 4029/2 + 200/5 + 10/5
+    240  + 60 + 4029/2 + 200/5 + 10/5 + 1000/4 + 200/4
 
-
+3050/50
 
 # HP
 
@@ -52,6 +52,10 @@
 
 
 "
+
+
+1000 gp diamond
+
 shitloads of fancy clothes
 
 
@@ -61,8 +65,16 @@ other fellow is from Shou lung, taiwan of t'u lung
 T'u Lung/Shou Lung 
 
 
+67 hp
 
-2d10 5d8 hit die
+1d10 4d8 hit die
+
+0 lvl 1 slots
+
+1 lvl 2 slot
+
+others full
+
 
 doppleganger name adkalskdalkd
 
@@ -91,9 +103,6 @@ ceases to function until you finish a Long Rest.
 
 goggles of night
 
-shield of the hidden lord ... action to cast fireball wall of fire 2 charges DC 21 no concentration
-fire res cold res
-
 potion of frost giant strength
 
 
@@ -107,22 +116,19 @@ potion of fire resistance
 candle
 whistle in darkness it casts animste dead one every 7 day
 
+driftglobe
 This small sphere of thick glass weighs 1 pound. If you are within 60 feet of it, you can speak its command word and cause it to emanate the light or daylight spell. Once used, the daylight effect can't be used again until the next dawn.
 You can speak another command word as an action to make the illuminated globe rise into the air and float no more than 5 feet off the ground. The globe hovers in this way until you or another creature grasps it. If you move more than 60 feet from the hovering globe, it follows you until it is within 60 feet of you. It takes the shortest route to do so. If prevented from moving, the globe sinks gently to the ground and becomes inactive, and its light winks out.
 
 javelin of lightning  4d6 120 feet line lightning plus javelin
 
-bagpipe: disadvantage on being charmed
 
-driftglobe
 
 healer's kit
 
 necklace for sick dwarf husband, thorum. dwarfs ashes
 soul coin
 
-
-Villark
 
 
 
@@ -163,8 +169,7 @@ with multiple things tied onto the top: a broken bone, tied up pouch, more rotte
 
 
 
-vakai
-vakaki
+
 ritual sacrifice stuff
 religious text
 

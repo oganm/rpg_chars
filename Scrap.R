@@ -12,7 +12,8 @@
     300/6 -
     30/6 + 
     166.666666666666666666666666 - 
-    20  # halberd
+    20 +  # halberd
+    20/4
 
 
 
@@ -44,10 +45,23 @@
 
 
 "
-23 HP
--1 lvl 1 slot
+14 hp
+3d8 hit dice
+20 HP scruffles
+-3 lvl 1 slot
 
-3 acid vials
+0 acid vials
+
+cassius' kill list
+
++1 dagger
+
+cyphered journal Anis cypher
+
+cyphered letters from cassiaus
+
+Canary deed of Cassius and other records
+
 
 halberd
 
