@@ -13,11 +13,21 @@
     30/6 + 
     166.666666666666666666666666 - 
     20 +  # halberd
-    20/4
+    20/4 + 
+    510/6 - 
+    5 - # hunting trap 
+    50 - # alchemist fire
+    50 - # tinkers kit
+    2 -# scruffles backpack
+    8 + # carpenter's tool
+    25 -# sell scalemail    
+    50 + # ruby    
+    150 - 
+    16 # everything else
+    
 
 
-
-# Scrap weight
+# Scrap weight not up to date
 
 8*15 -
     45 - # scale mail
@@ -45,12 +55,39 @@
 
 
 "
-14 hp
-3d8 hit dice
-20 HP scruffles
--3 lvl 1 slot
 
-0 acid vials
+1.    A pendant of red stone carved with an elven face    nothing
+    2.    A glass lens etched with geometric patterns     fire starter
+    3.    A bronze candlestick crafted in the form of a tower   +1 club
+    4.    A tiny bronze chariot hanging from an iron chain     keychain
+    5.    A small mirror with a leather wrist strap      somebody elses face
+    6.    A pewter amulet which randomly speaks strange prophecies    divination 
+    7.    A loosely-bound folio of pressed fairies       foioi
+    8.    An iron key with a sword-like hilt             sol keep key
+    9.    A steel mirror set in a fanged maw of bronze    mirror
+    10.    A fragment of meteoric stone which seems to make animals feel uneasy  scare away animals
+
+2 acid
+continual flame amuletal
+
+carpenter's tools
+backpack for scruffles
+
+journal cypher iridian
+
+hunting trap
+alchemist fire
+
+letter addressed to trader in Ruin
+
+cat's grace potion
+
+mythril plate armor
+
+invisibility
+
+map of the free marshes
+
 
 cassius' kill list
 
@@ -63,14 +100,13 @@ cyphered letters from cassiaus
 Canary deed of Cassius and other records
 
 
+
 halberd
 
 flag of empris
 
 goblets with divets 
 4 gems paranoia 1 hour, heal 2d8, hurt 2d10, silence 1 hour remove curse
-
-Scale mail
 
 fancy clothes
 
@@ -89,6 +125,7 @@ set of dark common clothes
 hood
 belt pouch
 
+tinker's kit
 forgery kit
 thieves tools
 smiths tools
@@ -103,12 +140,8 @@ caltrops: 5 feet DC 15 dex
 "
 tobuy
 =======
-extra backback for scruffles 2
-tinker's kit 50
-carpenter's tools 8
 hand crossbow 75
-half plate/breastplate 750/400
-ruby for continual flame 50
+half plate 750
 "
 
 "

@@ -52,7 +52,7 @@
 
 
 "
-
+acid 2
 
 1000 gp diamond
 
