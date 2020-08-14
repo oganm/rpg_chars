@@ -14,7 +14,7 @@
     50 -  # base weeks
     1 - 25 - 200 + 10/5 +
     2150/5 + # cloak and staff and gems
-    240  + 60 + 4029/2 + 200/5 + 10/5 + 1000/4 + 200/4
+    240  + 60 + 4029/2 + 200/5 + 10/5 + 1000/4 + 200/4 + 26 + 150
 
 3050/50
 
@@ -52,7 +52,10 @@
 
 
 "
-acid 2
+
+speak with plants
+
+potion of poison
 
 1000 gp diamond
 
@@ -117,8 +120,15 @@ candle
 whistle in darkness it casts animste dead one every 7 day
 
 driftglobe
-This small sphere of thick glass weighs 1 pound. If you are within 60 feet of it, you can speak its command word and cause it to emanate the light or daylight spell. Once used, the daylight effect can't be used again until the next dawn.
-You can speak another command word as an action to make the illuminated globe rise into the air and float no more than 5 feet off the ground. The globe hovers in this way until you or another creature grasps it. If you move more than 60 feet from the hovering globe, it follows you until it is within 60 feet of you. It takes the shortest route to do so. If prevented from moving, the globe sinks gently to the ground and becomes inactive, and its light winks out.
+This small sphere of thick glass weighs 1 pound. If you are within 60 feet of it,
+you can speak its command word and cause it to emanate the light or daylight
+spell. Once used, the daylight effect can't be used again until the next dawn.
+You can speak another command word as an action to make the illuminated globe
+rise into the air and float no more than 5 feet off the ground. The globe hovers
+in this way until you or another creature grasps it. If you move more than 60
+feet from the hovering globe, it follows you until it is within 60 feet of you.
+It takes the shortest route to do so. If prevented from moving, the globe sinks
+gently to the ground and becomes inactive, and its light winks out.
 
 javelin of lightning  4d6 120 feet line lightning plus javelin
 

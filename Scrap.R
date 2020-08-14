@@ -23,38 +23,62 @@
     25 -# sell scalemail    
     50 + # ruby    
     150 - 
-    16 # everything else
-    
+    16 - # misc magic items
+    100 - # platinum rings for warding bond
+    10 + # vials
+    0.9/2 -# sell most torches
+    20
 
 
-# Scrap weight not up to date
-
+# Scrap weight 
 8*15 -
-    45 - # scale mail
+    20 - # breastplate
+    3- # whip
+    1 - # dagger
+    6 - # shield
+    2 - # ball bearings
+    2 - # caltrops
+    5 - # backpack
+    10 - # rope
+    1 - # thieves' tools
+    10 - # tinker's tools
+    5 - # forgery kit
     1 - # belt pouch
-    3 - # clothes
-    5 -# waterskin
-    10 -# rope
-    1.5 -# bolts
-    1 -# thieve's 
-    5 -# backpack
     5 -# crowbar
     1 -# hammer
     2.5 - # pitons
-    10 -# torches
-    1 -# tinderbox
-    3 -  # herbalism
-    5 -# forgery
-    8 -  # smiths
-    6 # halberd
-
+    3 -# clothes 
+    1- # tinderbox
+    2 -# acid vials
+    1 # alchemist fire
 
 # Scruffles weight
-14*15 
+14*15 -
+    5 -# backpack
+    6- # halberd
+    6 -# carpenter's tools
+    8 - # smith's tools
+    3 - # herbalism kit
+    25 - # hunting trap
+    1.5 - # 20 bolts
+    1 -# torch
+    5 -# waterskin
+    6 - # fine clothes
+    2 # candlestick +1 club
 
 
 
 "
+26 hp
+
+
+lyrian cup high proclaimer 25 years ago dated 1d4 healing
+
+horrible doctor's uniform
+empire signet ring
+martin's letter
+
+
 
 1.    A pendant of red stone carved with an elven face    nothing
     2.    A glass lens etched with geometric patterns     fire starter
@@ -62,13 +86,14 @@
     4.    A tiny bronze chariot hanging from an iron chain     keychain
     5.    A small mirror with a leather wrist strap      somebody elses face
     6.    A pewter amulet which randomly speaks strange prophecies    divination 
-    7.    A loosely-bound folio of pressed fairies       foioi
+    7.    A loosely-bound folio of pressed fairies       
     8.    An iron key with a sword-like hilt             sol keep key
     9.    A steel mirror set in a fanged maw of bronze    mirror
     10.    A fragment of meteoric stone which seems to make animals feel uneasy  scare away animals
 
-2 acid
-continual flame amuletal
+4 acid
+6 vials
+continual flame amulet
 
 carpenter's tools
 backpack for scruffles
@@ -114,7 +139,7 @@ backpack
 a crowbar
 a hammer
 10 pitons
-10 torches
+1 torch
 a tinderbox
 waterskin
 50 feet of hempen rope
