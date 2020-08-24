@@ -53,6 +53,8 @@
 
 "
 
+5000 gp amulet
+
 speak with plants
 
 potion of poison

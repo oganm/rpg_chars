@@ -69,8 +69,12 @@
 
 
 "
-26 hp
+20 hp
 
+ship manifests
+2 empty elemental gems we know
+
+stone fragments
 
 lyrian cup high proclaimer 25 years ago dated 1d4 healing
 
