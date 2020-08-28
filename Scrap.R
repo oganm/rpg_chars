@@ -15,6 +15,7 @@
     20 +  # halberd
     20/4 + 
     510/6 - 
+    5 - # healer't kit
     5 - # hunting trap 
     50 - # alchemist fire
     50 - # tinkers kit
@@ -50,7 +51,10 @@
     3 -# clothes 
     1- # tinderbox
     2 -# acid vials
-    1 # alchemist fire
+    1 -  # alchemist fire
+    3 # healer's kit
+
+
 
 # Scruffles weight
 14*15 -
@@ -69,7 +73,14 @@
 
 
 "
-20 hp
+
+
+
+signet ring +1 spellcasting focus
+church amulet imperial seal supressor of sorcery
+
+
+old lady chucrch complaint
 
 ship manifests
 2 empty elemental gems we know
@@ -83,6 +94,8 @@ empire signet ring
 martin's letter
 
 
+
+healer's kit ---
 
 1.    A pendant of red stone carved with an elven face    nothing
     2.    A glass lens etched with geometric patterns     fire starter
