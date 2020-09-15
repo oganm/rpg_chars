@@ -28,7 +28,8 @@
     100 - # platinum rings for warding bond
     10 + # vials
     0.9/2 -# sell most torches
-    20
+    20 + 
+    600/6
 
 
 # Scrap weight 
@@ -73,11 +74,13 @@
 
 
 "
+from the paladin
+skeleton key
+opal
 
-
+arcane core tiny skull
 
 signet ring +1 spellcasting focus
-church amulet imperial seal supressor of sorcery
 
 
 old lady chucrch complaint
@@ -108,7 +111,7 @@ healer's kit ---
     9.    A steel mirror set in a fanged maw of bronze    mirror
     10.    A fragment of meteoric stone which seems to make animals feel uneasy  scare away animals
 
-4 acid
+3 acid
 6 vials
 continual flame amulet
 
