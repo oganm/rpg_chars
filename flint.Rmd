@@ -1,0 +1,119 @@
+---
+title: "Flint"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+```
+
+## Monster Bits
+
+### Lizard
+```{r}
+lizard = 195
+```
+
+
+### Spider (mwindaji)
+```{r}
+spider = 135
+```
+
+
+### Spending
+Lizard Leather Armor (Level 5)
++2 ac, +4 dex cap, -1 check penalty
+```{r}
+lizard = lizard - 2 # base armor
+lizard = lizard - 160 # level 5 upgrade
+```
+
+
+Chameleon Suit
+```{r}
+lizard = lizard - 16
+```
+
+
+Totals
+
+```{r}
+spider
+lizard
+```
+
+## Other Spending
+
+
+
+```{r}
+# starting
+gold = 450
+
+
+gold = gold - 
+    60 - #crafter's eyepiece
+    100 - # sleeves of storage
+    3 - # shortbow
+    35 - # potency rune
+    65 - # striking rune
+    5 - # healer's tools
+    2 - # repair kit
+    1 - # buckler
+    1 - # buckler number 2
+    1 - # spare buckler
+    0.4 - # winter clothes
+    30 - # hat of disguise
+    1 -# climbing kits 2
+    20 # spyglass
+
+```
+
+### Recipes
+
+```{r}
+
+
+```
+
+### Inventory
+
++1 striking shortbow
++1 lizard skin leather armor
+buckler
+repair kit
+healing kit
+sleeves of storage
+crafter's eyepiece
+2 bucklers
+winter clothes
+hat of disguise
+2 climbing kits
+spyglass
+
+## Notes
+
+Patiently waiting: racist ass
+oakbloom by the wind: apparently non racist mom
+eye above all: old bird dude
+
+
+
+### travel
+
+serpent's head rock
+canyon submerged 
+stone whirl 
+ribbons
+eventual tribe meeting, take winter supplies
+
+ancestor stones
+walk carefully
+great horizon
+hanging giant
+tunnels in the mountains
+bashkani
+
+
