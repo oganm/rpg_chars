@@ -44,22 +44,10 @@ lizard = lizard - 160 # level 5 upgrade
 ```
 
 
-Chameleon Suit
-```{r}
-lizard = lizard - 16
-```
-
-owlbear claw
-```{r}
-lizard = lizard - 3
-```
-
 
 
 
 Yusuf's shield
-
-
 
 Hardness 7 HP 34, BT 17
 ```{r}
@@ -86,6 +74,15 @@ lizard = lizard - 3 # base cost
 spider = spider - 100 # level 4 refinement
 
 ```
+
+
+Consumables
+
+```{r}
+lizard = lizard - 16 # Chameleon Suit
+lizard = lizard - 3 # owlbear claw
+```
+
 Totals
 
 ```{r}
