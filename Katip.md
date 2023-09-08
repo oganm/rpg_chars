@@ -91,6 +91,22 @@ add(spell_book,
 remove(consumables, "Scroll of Protection from Evil and Good")
 ```
 
+#### Scribe scroll of fog cloud
+
+``` r
+gold = gold - 25
+downtime = downtime - 1
+add(consumables,"Scroll of Fog Cloud")
+```
+
+#### Scribe scroll of protection from good and evil
+
+``` r
+gold = gold - 25
+downtime = downtime - 1
+add(consumables,"Scroll of Protection From Good and Evil")
+```
+
 ### Shopping
 
 ### Level ups
@@ -120,7 +136,7 @@ c(level = level,
 ```
 
     ##    level     gold downtime 
-    ##        3       65       18
+    ##        3       15       16
 
 ``` r
 magic_items
@@ -139,7 +155,9 @@ common_items
 consumables
 ```
 
-    ## [1] "Potion of Healing"
+    ## [1] "Potion of Healing"                      
+    ## [2] "Scroll of Fog Cloud"                    
+    ## [3] "Scroll of Protection From Good and Evil"
 
 ``` r
 spell_book

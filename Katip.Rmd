@@ -121,6 +121,20 @@ add(spell_book,
     spells[names(spells) %in% c('Protection from Evil and Good')])
 remove(consumables, "Scroll of Protection from Evil and Good")
 ```
+
+#### Scribe scroll of fog cloud
+```{r}
+gold = gold - 25
+downtime = downtime - 1
+add(consumables,"Scroll of Fog Cloud")
+```
+
+#### Scribe scroll of protection from good and evil
+```{r}
+gold = gold - 25
+downtime = downtime - 1
+add(consumables,"Scroll of Protection From Good and Evil")
+```
 ### Shopping
 
 
