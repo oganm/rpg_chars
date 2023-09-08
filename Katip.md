@@ -109,6 +109,20 @@ add(consumables,"Scroll of Protection From Good and Evil")
 
 ### Shopping
 
+``` r
+gold = gold - 
+  1 - # caltrops
+  1 - # ball bearings
+  2 - # crowbar
+  2 - # manacles
+  0.5 -  # 10 pitons
+  1 - # 50 ft rope
+  5 - # mirror
+  0.05 - # signal whistle
+  1 - #  oil x 5
+  0.5 # lamp
+```
+
 ### Level ups
 
 #### 1-\>2
@@ -136,7 +150,7 @@ c(level = level,
 ```
 
     ##    level     gold downtime 
-    ##        3       15       16
+    ##     3.00     0.95    16.00
 
 ``` r
 magic_items
