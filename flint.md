@@ -11,6 +11,10 @@ lizard = 195
 
 ### Spider (mwindaji)
 
+  - poison damage
+
+<!-- end list -->
+
 ``` r
 spider = 135
 ```
@@ -62,18 +66,15 @@ big_crock = big_crock - 60 # level 4 refinement
 big_crock = big_crock - 20 # level 2 sturdy imbuement
 ```
 
-Shocking bow
-
-``` r
-lizard = lizard - 3 # base cost
-spider = spider - 100 # level 4 refinement
-```
-
 Consumables
 
 ``` r
 lizard = lizard - 16 # Chameleon Suit
 lizard = lizard - 3 # owlbear claw
+spider = spider - 3 # shining ammunition
+lizard = lizard - 6 # wind up cart
+lizard = lizard - 8 # mines level 1
+spider = spider - 16
 ```
 
 Totals
@@ -94,13 +95,13 @@ baby_crock
 spider
 ```
 
-    ## [1] 35
+    ## [1] 116
 
 ``` r
 lizard
 ```
 
-    ## [1] 11
+    ## [1] 0
 
 ## Gold Spending
 
@@ -177,6 +178,7 @@ gold
 
   - \+1 striking shortbow
   - \+1 lizard skin leather armor
+  - shining ammunition
   - crafter’s eyepiece
   - hat of disguise
   - hand of the mage
@@ -188,15 +190,11 @@ gold
   - Chameleon Suit
   - blast boots (lesser)
   - clockwork goggles (lesser)
+  - wind up cart
 
-## Notes
+\#\#\# Codes
 
-Patiently waiting: racist ass oakbloom by the wind: apparently non
-racist mom eye above all: old bird dude
-
-### Codes
-
-Repair heal = 15
+Repair heal = 40 Repair critical heal = 60
 
 Unstable damage = 6
 
@@ -205,9 +203,9 @@ library(diceSyntax)
 roll('6d6') # explode
 ```
 
-    ## [1] "Rolls: [ 5 5 5 5 4 5 ] (6d6)"
+    ## [1] "Rolls: [ 2 5 *6* *6* 3 3 ] (6d6)"
 
-    ## [1] 29
+    ## [1] 25
 
 ``` r
 # Unstable DC
@@ -215,7 +213,7 @@ roll("1d20") %>%
     {ifelse(.>= 17,yes = "Success",no = ifelse(.>=7 ,yes = 'Failure',no= 'Crit Fail'))} 
 ```
 
-    ## [1] "Rolls: [ 8 ] (1d20)"
+    ## [1] "Rolls: [ 9 ] (1d20)"
 
     ## [1] "Failure"
 
@@ -225,7 +223,7 @@ roll("1d20+12") %>%
     {ifelse(.>= 15,yes = "Success",no = ifelse(.>=5 ,yes = 'Failure',no= 'Crit Fail'))}
 ```
 
-    ## [1] "Rolls: [ 14 ] (1d20)"
+    ## [1] "Rolls: [ 15 ] (1d20)"
 
     ## [1] "Success"
 
@@ -233,17 +231,17 @@ roll("1d20+12") %>%
 roll('2d8') # success
 ```
 
-    ## [1] "Rolls: [ 3 2 ] (2d8)"
+    ## [1] "Rolls: [ *8* *1* ] (2d8)"
 
-    ## [1] 5
+    ## [1] 9
 
 ``` r
 roll('4d6') # crit success
 ```
 
-    ## [1] "Rolls: [ *6* 4 *6* 3 ] (4d6)"
+    ## [1] "Rolls: [ 5 2 5 5 ] (4d6)"
 
-    ## [1] 19
+    ## [1] 17
 
 ``` r
 # Expert healing
@@ -251,7 +249,7 @@ roll("1d20+12") %>%
     {ifelse(.>= 20,yes = "Success",no = ifelse(.>=10 ,yes = 'Failure',no= 'Crit Fail'))}
 ```
 
-    ## [1] "Rolls: [ 10 ] (1d20)"
+    ## [1] "Rolls: [ 19 ] (1d20)"
 
     ## [1] "Success"
 
@@ -259,17 +257,22 @@ roll("1d20+12") %>%
 roll('2d8+10') # success
 ```
 
-    ## [1] "Rolls: [ 6 *8* ] (2d8)"
+    ## [1] "Rolls: [ 5 4 ] (2d8)"
 
-    ## [1] 24
+    ## [1] 19
 
 ``` r
 roll('4d8+10') # crit success
 ```
 
-    ## [1] "Rolls: [ *1* 3 7 6 ] (4d8)"
+    ## [1] "Rolls: [ 4 5 6 4 ] (4d8)"
 
-    ## [1] 27
+    ## [1] 29
+
+## Notes
+
+Patiently waiting: racist ass oakbloom by the wind: apparently non
+racist mom eye above all: old bird dude
 
 ### travel
 
@@ -278,3 +281,21 @@ meeting, take winter supplies
 
 ancestor stones walk carefully great horizon hanging giant tunnels in
 the mountains bashkani
+
+cousins whisper of sand flowey that blooms again
+
+shade of the oasis hawk who pokes heavens
+
+echetmol
+
+14 days
+
+180 people 5 prov per day
+
+Provisions
+
+``` r
+25 - 5 - 5 - 5
+```
+
+    ## [1] 10

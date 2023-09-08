@@ -17,6 +17,7 @@ lizard = 195
 
 
 ### Spider (mwindaji)
+ - poison damage
 ```{r}
 spider = 135
 ```
@@ -68,19 +69,16 @@ big_crock = big_crock - 20 # level 2 sturdy imbuement
 ```
 
 
-Shocking bow 
-```{r}
-lizard = lizard - 3 # base cost
-spider = spider - 100 # level 4 refinement
-
-```
-
 
 Consumables
 
 ```{r}
 lizard = lizard - 16 # Chameleon Suit
 lizard = lizard - 3 # owlbear claw
+spider = spider - 3 # shining ammunition
+lizard = lizard - 6 # wind up cart
+lizard = lizard - 8 # mines level 1
+spider = spider - 16
 ```
 
 Totals
@@ -164,6 +162,7 @@ gold
 
 - +1 striking shortbow
 - +1 lizard skin leather armor
+- shining ammunition
 - crafter's eyepiece
 - hat of disguise
 - hand of the mage
@@ -176,18 +175,12 @@ gold
 - Chameleon Suit
 - blast boots (lesser)
 - clockwork goggles (lesser)
+ - wind up cart
+ 
+ ### Codes
 
-
-## Notes
-
-Patiently waiting: racist ass
-oakbloom by the wind: apparently non racist mom
-eye above all: old bird dude
-
-
-### Codes
-
-Repair heal = 15
+Repair heal = 40
+Repair critical heal = 60
 
 Unstable damage = 6
 
@@ -217,6 +210,15 @@ roll('4d8+10') # crit success
 ```
 
 
+## Notes
+
+Patiently waiting: racist ass
+oakbloom by the wind: apparently non racist mom
+eye above all: old bird dude
+
+
+
+
 ### travel
 
 serpent's head rock
@@ -233,3 +235,22 @@ tunnels in the mountains
 bashkani
 
 
+cousins
+whisper of sand
+flowey that blooms again
+
+
+shade of the oasis
+hawk who pokes heavens
+
+echetmol
+
+14 days
+
+180 people
+5 prov per day
+
+Provisions
+```{r}
+25 - 5 - 5 - 5
+```
