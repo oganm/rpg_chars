@@ -1,6 +1,15 @@
 Katip AL logsheet
 ================
 
+### Contents
+
+  - [On creation]()
+  - [Adventures]()
+  - [Downtime]()
+  - [Shopping]()
+  - [Level ups]()
+  - [Final State]()
+
 ### On creation
 
 ``` r

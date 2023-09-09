@@ -3,6 +3,16 @@ title: "Katip AL logsheet"
 output: github_document
 ---
 
+### Contents
+
+* [On creation]()
+* [Adventures]()
+* [Downtime]()
+* [Shopping]()
+* [Level ups]()
+* [Final State]()
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 add = function(array, things){
