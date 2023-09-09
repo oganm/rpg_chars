@@ -3,12 +3,12 @@ Katip AL logsheet
 
 ### Contents
 
-  - [On creation]()
-  - [Adventures]()
-  - [Downtime]()
-  - [Shopping]()
-  - [Level ups]()
-  - [Final State]()
+  - [On creation](#on-creation)
+  - [Adventures](#adventures)
+  - [Downtime](#downtime)
+  - [Shopping](#shopping)
+  - [Level ups](#level-ups)
+  - [Final State](#final-state)
 
 ### On creation
 
