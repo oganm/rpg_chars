@@ -13,15 +13,17 @@ Katip AL logsheet
 ### On creation
 
 ``` r
-library(wizaRd)
-
 level = 1
 gold = 15
 downtime = 0
 magic_items = c()
 consumables = c()
 common_items = c()
+mundane_items = c()
 spell_book = list();class(spell_book) = append(class(spell_book),'spellList')
+
+add(mundane_items,
+    c('dagger','arcane focus','spellbook','bottle of black ink','quill','small knife','letter','set of common clothes','belt pouch','backpack','bedroll','mess kit','tinderbox','10 torches','10 days of rations','waterskin',"50 ft hempen rope"))
 
 
 # cantrips
@@ -125,11 +127,13 @@ gold = gold -
   2 - # crowbar
   2 - # manacles
   0.5 -  # 10 pitons
-  1 - # 50 ft rope
   5 - # mirror
   0.05 - # signal whistle
   1 - #  oil x 5
   0.5 # lamp
+
+add(mundane_items,
+    c('caltrops','ball bearings','crowbar','manacles','10 pitons','mirror','signal whistle','5 oil','lamp'))
 ```
 
 ### Level ups
@@ -159,28 +163,42 @@ c(level = level,
 ```
 
     ##    level     gold downtime 
-    ##     3.00     0.95    16.00
+    ##     3.00     1.95    16.00
 
 ``` r
-magic_items
+magic_items %>% sort
 ```
 
-    ## [1] "Ring of Mind Shielding"                     
-    ## [2] "Geyser Figurine (Decanter of Endless Water)"
+    ## [1] "Geyser Figurine (Decanter of Endless Water)"
+    ## [2] "Ring of Mind Shielding"
 
 ``` r
-common_items
+common_items %>% sort
 ```
 
     ## NULL
 
 ``` r
-consumables
+consumables %>% sort
 ```
 
     ## [1] "Potion of Healing"                      
     ## [2] "Scroll of Fog Cloud"                    
     ## [3] "Scroll of Protection From Good and Evil"
+
+``` r
+mundane_items %>% sort
+```
+
+    ##  [1] "10 days of rations"    "10 pitons"             "10 torches"           
+    ##  [4] "50 ft hempen rope"     "5 oil"                 "arcane focus"         
+    ##  [7] "backpack"              "ball bearings"         "bedroll"              
+    ## [10] "belt pouch"            "bottle of black ink"   "caltrops"             
+    ## [13] "crowbar"               "dagger"                "lamp"                 
+    ## [16] "letter"                "manacles"              "mess kit"             
+    ## [19] "mirror"                "quill"                 "set of common clothes"
+    ## [22] "signal whistle"        "small knife"           "spellbook"            
+    ## [25] "tinderbox"             "waterskin"
 
 ``` r
 spell_book
