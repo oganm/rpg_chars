@@ -43,9 +43,9 @@ add(spell_book,
                  "Absorb Elements",
                  "Fog Cloud",
                  "Feather Fall",
-                 "Mage Armor",
+                 "Mage Armor",# magic initiate
                  "Catapult",
-                 "Shield" # magic initiate
+                 "Shield" 
                )])
 ```
 
