@@ -85,7 +85,7 @@ add(spell_book,
                )])
 ```
 
-### Adventures 
+### Adventure rewards
 
 ####  Adventure: DDEX2-6 Breath of the Yellow Rose (Tier 1)
 
@@ -114,6 +114,16 @@ The greeting of the forefathers is simple and consists of 7 parts:
 - Part 3: Name of grandfather
 - Part 4: Name of great grandfather
 - Parts 5, 6, 7: Life accomplishments
+
+#### The Donjon (Tier 1)
+
+```{r}
+level = level + 1
+downtime = downtime + 10
+gold = gold + 166
+add(magic_items,"Goggles of the Night")
+
+```
 
 ### Downtime
 
@@ -150,6 +160,20 @@ add(consumables,"Scroll of Fog Cloud")
 gold = gold - 25
 downtime = downtime - 1
 add(consumables,"Scroll of Protection From Good and Evil")
+
+gold = gold - 50
+downtime = downtime - 2
+add(consumables,c("Scroll of Protection From Good and Evil","Scroll of Protection From Good and Evil"))
+```
+
+
+#### Scribe scroll of magic missile
+```{r}
+gold = gold - 50
+downtime = downtime - 2
+
+add(consumables,c("Scroll of Magic Missile","Scroll of Magic Missile"))
+
 ```
 ### Shopping
 ```{r}
@@ -162,12 +186,25 @@ gold = gold -
   5 - # mirror
   0.05 - # signal whistle
   1 - #  oil x 5
-  0.5 # lamp
+  0.5 - # lamp
+  1 # 5 more oil. one used
 
 add(mundane_items,
-    c('caltrops','ball bearings','crowbar','manacles','10 pitons','mirror','signal whistle','5 oil','lamp'))
+    c('caltrops','ball bearings','crowbar','manacles','10 pitons','mirror','signal whistle','9 oil','lamp'))
 
 ```
+
+### Adventure Item use
+
+#### The Donjon (Tier 1)
+
+```{r}
+gold = gold - 1
+remove(consumables,"Scroll of Protection From Good and Evil")
+# flask of oil
+
+```
+
 ### Level ups
 
 #### 1->2
@@ -186,6 +223,13 @@ add(spell_book,
                c('Phantasmal Force',"Dragon's Breath")])
 ```
 
+
+#### 3-> 4
+```{r}
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Detect Magic','Alter Self',"Mending")])
+```
 ### Final State
 ```{r}
 c(level = level,

@@ -43,13 +43,13 @@ add(spell_book,
                  "Absorb Elements",
                  "Fog Cloud",
                  "Feather Fall",
-                 "Mage Armor",# magic initiate
+                 "Mage Armor", # magic initiate
                  "Catapult",
-                 "Shield" 
+                 "Shield"
                )])
 ```
 
-### Adventures
+### Adventure rewards
 
 #### Adventure: DDEX2-6 Breath of the Yellow Rose (Tier 1)
 
@@ -79,6 +79,15 @@ discretion). The greeting of the forefathers is simple and consists of 7
 parts: - Part 1: Name of character - Part 2: Name of father - Part 3:
 Name of grandfather - Part 4: Name of great grandfather - Parts 5, 6, 7:
 Life accomplishments
+
+#### The Donjon (Tier 1)
+
+``` r
+level = level + 1
+downtime = downtime + 10
+gold = gold + 166
+add(magic_items,"Goggles of the Night")
+```
 
 ### Downtime
 
@@ -116,6 +125,19 @@ add(consumables,"Scroll of Fog Cloud")
 gold = gold - 25
 downtime = downtime - 1
 add(consumables,"Scroll of Protection From Good and Evil")
+
+gold = gold - 50
+downtime = downtime - 2
+add(consumables,c("Scroll of Protection From Good and Evil","Scroll of Protection From Good and Evil"))
+```
+
+#### Scribe scroll of magic missile
+
+``` r
+gold = gold - 50
+downtime = downtime - 2
+
+add(consumables,c("Scroll of Magic Missile","Scroll of Magic Missile"))
 ```
 
 ### Shopping
@@ -130,10 +152,21 @@ gold = gold -
   5 - # mirror
   0.05 - # signal whistle
   1 - #  oil x 5
-  0.5 # lamp
+  0.5 - # lamp
+  1 # 5 more oil. one used
 
 add(mundane_items,
-    c('caltrops','ball bearings','crowbar','manacles','10 pitons','mirror','signal whistle','5 oil','lamp'))
+    c('caltrops','ball bearings','crowbar','manacles','10 pitons','mirror','signal whistle','9 oil','lamp'))
+```
+
+### Adventure Item use
+
+#### The Donjon (Tier 1)
+
+``` r
+gold = gold - 1
+remove(consumables,"Scroll of Protection From Good and Evil")
+# flask of oil
 ```
 
 ### Level ups
@@ -154,6 +187,14 @@ add(spell_book,
                c('Phantasmal Force',"Dragon's Breath")])
 ```
 
+#### 3-\> 4
+
+``` r
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Detect Magic','Alter Self',"Mending")])
+```
+
 ### Final State
 
 ``` r
@@ -163,14 +204,15 @@ c(level = level,
 ```
 
     ##    level     gold downtime 
-    ##     3.00     1.95    16.00
+    ##     4.00    65.95    22.00
 
 ``` r
 magic_items %>% sort
 ```
 
     ## [1] "Geyser Figurine (Decanter of Endless Water)"
-    ## [2] "Ring of Mind Shielding"
+    ## [2] "Goggles of the Night"                       
+    ## [3] "Ring of Mind Shielding"
 
 ``` r
 common_items %>% sort
@@ -184,14 +226,17 @@ consumables %>% sort
 
     ## [1] "Potion of Healing"                      
     ## [2] "Scroll of Fog Cloud"                    
-    ## [3] "Scroll of Protection From Good and Evil"
+    ## [3] "Scroll of Magic Missile"                
+    ## [4] "Scroll of Magic Missile"                
+    ## [5] "Scroll of Protection From Good and Evil"
+    ## [6] "Scroll of Protection From Good and Evil"
 
 ``` r
 mundane_items %>% sort
 ```
 
     ##  [1] "10 days of rations"    "10 pitons"             "10 torches"           
-    ##  [4] "50 ft hempen rope"     "5 oil"                 "arcane focus"         
+    ##  [4] "50 ft hempen rope"     "9 oil"                 "arcane focus"         
     ##  [7] "backpack"              "ball bearings"         "bedroll"              
     ## [10] "belt pouch"            "bottle of black ink"   "caltrops"             
     ## [13] "crowbar"               "dagger"                "lamp"                 
@@ -212,6 +257,7 @@ spell_book
     ## Prestidigitation
     ## Mold Earth
     ## Mind Sliver
+    ## Mending
     ## 
     ## Level 1
     ## =======
@@ -225,9 +271,11 @@ spell_book
     ## Protection from Evil and Good
     ## Identify
     ## Unseen Servant
+    ## Detect Magic
     ## 
     ## Level 2
     ## =======
     ## Misty Step
     ## Phantasmal Force
     ## Dragon's Breath
+    ## Alter Self
