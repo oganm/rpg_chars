@@ -1,0 +1,520 @@
+Katip_dndone
+================
+
+### Contents
+
+- [On creation](#on-creation)
+- [Adventures](#adventures)
+- [Shopping](#shopping)
+- [Downtime](#downtime)
+- [Item use](#item-use)
+- [Level ups](#level-ups)
+- [Final State](#final-state)
+
+### On creation
+
+``` r
+level = 1
+proficiency = 2
+downtime = 0
+gold = 0
+hp = 0 
+prepare_limit = 0
+ability_scores = c(Str=0,Dex=0,Con=0,Int=0,Wis=0,Cha=0)
+feats = c()
+features = c()
+skills = c()
+expertise = c()
+tools = c()
+magic_items = c()
+consumables = c()
+common_items = c()
+mundane_items = c()
+spell_book = list();class(spell_book) = append(class(spell_book),'spellList')
+```
+
+#### Class - Wizard
+
+``` r
+add(skills,c("Insight","Investigation"))
+add(mundane_items, c("2 daggers","Quarterstaff","Robe","Spellbook",
+                     "backpack","book","ink","ink pen","lamp","10 flasks of oil",
+                     "10 sheets of parchment","tinderbox"))
+
+
+# 3 cantrips can be changed at long rest
+add(spell_book,
+    spells[names(spells) %in% 
+               c("Mind Sliver",
+                 "Fire Bolt",
+                 "Toll the Dead")])
+
+# 6 level 1 spells
+add(spell_book,
+    spells[names(spells) %in% 
+               c("Magic Missile", # scribed
+                 "Absorb Elements",
+                 "Fog Cloud", # scribed
+                 "Feather Fall",
+                 "Catapult",
+                 "Shield")])
+
+
+add(features,"Ritual Adept")
+add(features,"Arcane Recovery: Half level")
+```
+
+#### Background - DMG custom
+
+``` r
+add(feats, "Magic Initiate(wizard)")
+# magic initiate cantrips
+add(spell_book,
+    spells[names(spells) %in% 
+               c("True Strike",
+                 "Minor Illusion")])
+# magic initiate lvl1 spell,
+add(spell_book,
+    spells[names(spells) %in% 
+               "Mage Armor"])
+add(features,"Daily mage armor from magic initiate")
+
+
+add(skills, c("Arcana","Persuasion"))
+add(tools, "Thieves' tools")
+gold = gold+50
+```
+
+#### Species - Human
+
+``` r
+add(features,"Resourceful: inspiration per long rest")
+# skillful
+add(skills,'Perception')
+# versatile
+add(feats,"Skilled")
+add(skills,c("Stealth","Acrobatics","Deception"))
+```
+
+#### Languages
+
+``` r
+languages = c('common','common sign language','elvish')
+```
+
+#### Ability scores
+
+``` r
+# point buy
+ability_scores = c(Str = 8,
+                   Dex = 14, 
+                   Con = 13, 
+                   Int = 15, 
+                   Wis = 12, 
+                   Cha = 10 
+)
+# 27 check
+costs = ability_scores %>% sapply(ab_cost) %>% sum
+assertthat::assert_that(costs == 27)
+```
+
+    ## [1] TRUE
+
+``` r
+# custom background
+ability_scores['Int'] = ability_scores['Int'] + 2
+ability_scores['Con'] = ability_scores['Con'] + 1
+
+# hp
+hp = 6+stat_mod(ability_scores['Con'])
+```
+
+#### Starting equipment
+
+``` r
+gold = gold -
+    1 - # caltrops
+    1 - # ball bearings
+    2 - # crowbar
+    2 - # manacles
+    5 - # mirror
+    0.05 - # signal whistle
+    25 - # thieves' tools
+    2 - # 4 days of rations
+    1 - # rope
+    .2 - # waterskin
+    25 # light crossbow
+
+add(mundane_items,
+    c('caltrops','ball bearings','crowbar','manacles','mirror','signal whistle',"thieves' tools","rope","waterskin","4 days of rations","light crossbow"))
+```
+
+### Adventures
+
+#### Adventure: DDEX2-6 Breath of the Yellow Rose (Tier 1)
+
+``` r
+level = level + 1
+downtime = downtime + 10
+gold = gold + 100
+add(magic_items, "Ring of Mind Shielding")
+alter_count(consumables,"Scroll of Misty Step",1)
+```
+
+#### Steamy Shores of Danger (CCC-CIC-09)
+
+``` r
+level = level + 1
+downtime = downtime + 10
+gold = gold + 100
+add(magic_items,'Geyser Figurine (Decanter of Endless Water)')
+alter_count(consumables,"Potion of Healing",1)
+alter_count(consumables,"Scroll of Protection from Evil and Good",1)
+```
+
+You have learned how to introduce yourself in a formal and impressive
+way. During your future encounters with members of tribal cultures of
+Big Folk Island or the village of Jarko’tu’ta you may gain advantage on
+social checks if you recite your Greeting during introductions (DM
+discretion). The greeting of the forefathers is simple and consists of 7
+parts: - Part 1: Name of character - Part 2: Name of father - Part 3:
+Name of grandfather - Part 4: Name of great grandfather - Parts 5, 6, 7:
+Life accomplishments
+
+#### The Donjon (Tier 1)
+
+``` r
+level = level + 1
+downtime = downtime + 10
+gold = gold + 166
+add(magic_items,"Goggles of the Night")
+```
+
+#### CCC-TRI-06 Haggard Heroes
+
+``` r
+downtime = downtime +10
+gold = gold + 2000
+alter_count(consumables, "Potion of fire breath",1)
+add(magic_items, "+1 half plate")
+```
+
+#### DDAL04-06 The Ghost (Tier 1)
+
+``` r
+level = level +1
+downtime = downtime + 10
+gold = gold + 96
+add(magic_items,"Boots of Elvenkind")
+alter_count(mundane_items,"Antitoxin",1)
+alter_count(consumables,"Potion of Greater Healing",1)
+alter_count(consumables,"Potion of Cold Resistence",1)
+alter_count(consumables,"Scroll of Detect Thoughts",1)
+```
+
+### Shopping
+
+``` r
+gold = gold - 50
+alter_count(consumables,'Scroll of Detect Magic',1)
+gold = gold - 2
+alter_count(mundane_items,'bolts',40)
+gold = gold - 100
+alter_count(mundane_items,'pearl 100 gp',1) # identify spell component
+
+
+gold = gold -10 # find familiar casting
+```
+
+### Downtime
+
+- [Scribing
+  rules](https://5e.tools/tables.html#scribing%20spell%20scrolls%3b%20spell%20scroll%20costs_xphb)
+- Lvl 1: 25 gp 1 day
+- Lvl 2: 100 gp 3 days
+- Lvl 3: 150 gp 5 days
+- [Copying
+  rules](https://file.notion.so/f/f/43c7d4a0-717b-48cb-af6b-2b4d35b7d4ff/f38037fd-d2df-4e25-9630-3172539d8255/DD_Adventurers_League_Players_Guide_v15.3.pdf?table=block&id=24d6c553-f347-80d4-9c7b-dc1c1162ad9f&spaceId=43c7d4a0-717b-48cb-af6b-2b4d35b7d4ff&expirationTimestamp=1762509600000&signature=FWhaegVQhqtuW0Q_b0UCJdDuf9L1lg8ma-HzT8fdxSk&downloadName=D%26D+Adventurers+League+Players+Guide+v15.3.pdf):
+  10 spells \<=lvl4 or 5 spells \>=lvl5 per DT with wizardly quill. can
+  copy from other PCs after a session. Level\*50 cost
+- Buying scrolls cost twice the crafting cost + components
+
+#### Copy misty step
+
+``` r
+gold = gold - 100
+downtime = downtime - 1
+add(spell_book,
+    spells[names(spells) %in% c('Misty Step')])
+alter_count(consumables,'Scroll of Misty Step',-1)
+```
+
+#### Copy protection from evil and good
+
+``` r
+gold = gold - 50
+downtime = downtime - 1
+add(spell_book,
+    spells[names(spells) %in% c('Protection from Evil and Good')])
+alter_count(consumables,"Scroll of Protection from Evil and Good",-1)
+```
+
+#### Scribe scroll of fog cloud
+
+``` r
+gold = gold - 25
+downtime = downtime - 1
+alter_count(consumables,"Scroll of Fog Cloud",1)
+```
+
+#### Scribe scroll of protection from evil and good
+
+``` r
+gold = gold - 25
+downtime = downtime - 1
+alter_count(consumables,"Scroll of Protection from Evil and Good",1)
+```
+
+#### Copy scroll of detect magic
+
+``` r
+gold = gold - 50
+downtime = downtime - 1
+
+alter_count(consumables,"Scroll of Detect Magic",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Detect Magic')])
+```
+
+### Item use
+
+#### The Donjon (Tier 1)
+
+``` r
+gold = gold - 1
+alter_count(consumables,"Scroll of Protection From Evil and Good",-1)
+alter_count(mundane_items,"flasks of oil",-1)
+# flask of oil
+```
+
+#### DDAL04-06 The Ghost (Tier 1)
+
+``` r
+alter_count(consumables,"Potion of Healing",-1)
+```
+
+### Level ups
+
+#### 2
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(expertise,"Investigation")
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Identify',"Find Familiar")])
+```
+
+#### 3
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(features,c('Wizardly Quill','Awakened Spellbook:replace damage type'))
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Phantasmal Force',"Dragon's Breath")])
+```
+
+#### 4
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(feats,"Telekinetic")
+add(features,"Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet range to mage hand")
+ability_scores['Int'] = ability_scores['Int'] + 1
+add(spell_book,
+    spells[names(spells) %in% 
+               "Mage Hand"])
+
+
+
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Suggestion','Alter Self',"Mending")])
+```
+
+#### 5
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(features, "Memorize spell: Replace prepared spell on short rest")
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Glyph of Warding','Fireball')])
+add(magic_items,"Wand of the War Mage +1")
+```
+
+### Final State
+
+``` r
+c(level = level,
+  gold = gold,
+  downtime = downtime,
+  hp = hp)
+```
+
+    ##    level     gold downtime   hp.Con 
+    ##     5.00  2034.75    45.00    32.00
+
+``` r
+ability_scores
+```
+
+    ## Str Dex Con Int Wis Cha 
+    ##   8  14  14  18  12  10
+
+``` r
+skills
+```
+
+    ## [1] "Insight"       "Investigation" "Arcana"        "Persuasion"   
+    ## [5] "Perception"    "Stealth"       "Acrobatics"    "Deception"
+
+``` r
+expertise
+```
+
+    ## [1] "Investigation"
+
+``` r
+tools
+```
+
+    ## [1] "Thieves' tools"
+
+``` r
+features %>%{cat(paste("- ",.),sep='\n')}
+```
+
+- Ritual Adept
+- Arcane Recovery: Half level
+- Daily mage armor from magic initiate
+- Resourceful: inspiration per long rest
+- Wizardly Quill
+- Awakened Spellbook:replace damage type
+- Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet
+  range to mage hand
+- Memorize spell: Replace prepared spell on short rest
+
+``` r
+# magic item limit for tier 2: 3
+magic_items %>% sort  %>%{cat(paste("- ",.),sep='\n')}
+```
+
+- +1 half plate
+- Boots of Elvenkind
+- Geyser Figurine (Decanter of Endless Water)
+- Goggles of the Night
+- Ring of Mind Shielding
+- Wand of the War Mage +1
+
+``` r
+# common item limit for tier 2: 5
+# common_items %>% sort  %>%{cat(paste("- ",.),sep='\n')}
+# consumable limit for tier 2: 10
+consumables %>% sort  %>% {cat(paste("- ",.),sep='\n')}
+```
+
+- 1 Potion of Cold Resistence
+- 1 Potion of fire breath
+- 1 Potion of Greater Healing
+- 1 Scroll of Detect Thoughts
+- 1 Scroll of Fog Cloud
+
+``` r
+mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}
+```
+
+- 1 Antitoxin
+- 1 pearl 100 gp
+- 10 sheets of parchment
+- 2 daggers
+- 4 days of rations
+- 40 bolts
+- 9 flasks of oil
+- backpack
+- ball bearings
+- book
+- caltrops
+- crowbar
+- ink
+- ink pen
+- lamp
+- light crossbow
+- manacles
+- mirror
+- Quarterstaff
+- Robe
+- rope
+- signal whistle
+- Spellbook
+- thieves’ tools
+- tinderbox
+- waterskin
+
+``` r
+spell_book
+```
+
+    ## Cantrips
+    ## ========
+    ## Fire Bolt
+    ## Toll the Dead
+    ## Mind Sliver
+    ## Minor Illusion
+    ## True Strike
+    ## Mage Hand
+    ## Mending
+    ## 
+    ## Level 1
+    ## =======
+    ## Feather Fall
+    ## Fog Cloud
+    ## Magic Missile
+    ## Shield
+    ## Absorb Elements
+    ## Catapult
+    ## Mage Armor
+    ## Protection from Evil and Good
+    ## Detect Magic
+    ## Find Familiar
+    ## Identify
+    ## 
+    ## Level 2
+    ## =======
+    ## Misty Step
+    ## Phantasmal Force
+    ## Dragon's Breath
+    ## Alter Self
+    ## Suggestion
+    ## 
+    ## Level 3
+    ## =======
+    ## Fireball
+    ## Glyph of Warding
+
+``` r
+available_elements(spell_book) %>% 
+    {.[sapply(.,length)!=0]}
+```
+
+    ## $`1`
+    ## [1] "acid"        "bludgeoning" "cold"        "fire"        "force"      
+    ## [6] "lightning"   "poison"      "thunder"    
+    ## 
+    ## $`2`
+    ## [1] "acid"        "bludgeoning" "cold"        "fire"        "lightning"  
+    ## [6] "poison"      "psychic"     "slashing"   
+    ## 
+    ## $`3`
+    ## [1] "acid"      "cold"      "fire"      "lightning" "thunder"
