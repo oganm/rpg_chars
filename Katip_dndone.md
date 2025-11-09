@@ -222,6 +222,8 @@ alter_count(mundane_items,'bolts',40)
 gold = gold - 100
 alter_count(mundane_items,'pearl 100 gp',1) # identify spell component
 
+gold = gold - 200
+alter_count(consumables,'Potion of Greater Healing',1)
 
 gold = gold -10 # find familiar casting
 ```
@@ -284,6 +286,30 @@ downtime = downtime - 1
 alter_count(consumables,"Scroll of Detect Magic",-1)
 add(spell_book,
     spells[names(spells) %in% c('Detect Magic')])
+```
+
+### Scribe scroll of protection from evil and good (2024 rules)
+
+``` r
+gold = gold - 2*50 # 25 + 25 material cost
+downtime = downtime - 2
+alter_count(consumables,"Scroll of Protection from Evil and Good",2)
+```
+
+### Scribe scroll of fireball
+
+``` r
+gold = gold - 150
+downtime = downtime - 5
+alter_count(consumables,"Scroll of Fireball",1)
+```
+
+### Scribe scroll of alter self
+
+``` r
+gold = gold - 100*2
+downtime = downtime -3*2
+alter_count(consumables,"Scroll of Alter Self",2)
 ```
 
 ### Item use
@@ -364,7 +390,7 @@ c(level = level,
 ```
 
     ##    level     gold downtime   hp.Con 
-    ##     5.00  2034.75    45.00    32.00
+    ##     5.00  1384.75    32.00    32.00
 
 ``` r
 ability_scores
@@ -427,9 +453,12 @@ consumables %>% sort  %>% {cat(paste("- ",.),sep='\n')}
 
 - 1 Potion of Cold Resistence
 - 1 Potion of fire breath
-- 1 Potion of Greater Healing
 - 1 Scroll of Detect Thoughts
+- 1 Scroll of Fireball
 - 1 Scroll of Fog Cloud
+- 2 Potion of Greater Healing
+- 2 Scroll of Alter Self
+- 2 Scroll of Protection from Evil and Good
 
 ``` r
 mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}

@@ -319,6 +319,8 @@ alter_count(mundane_items,'bolts',40)
 gold = gold - 100
 alter_count(mundane_items,'pearl 100 gp',1) # identify spell component
 
+gold = gold - 200
+alter_count(consumables,'Potion of Greater Healing',1)
 
 gold = gold -10 # find familiar casting
 ```
@@ -381,9 +383,31 @@ add(spell_book,
     spells[names(spells) %in% c('Detect Magic')])
 ```
 
+### Scribe scroll of protection from evil and good (2024 rules)
+
+```{r}
+gold = gold - 2*50 # 25 + 25 material cost
+downtime = downtime - 2
+alter_count(consumables,"Scroll of Protection from Evil and Good",2)
+```
 
 
+### Scribe scroll of fireball
 
+```{r}
+gold = gold - 150
+downtime = downtime - 5
+alter_count(consumables,"Scroll of Fireball",1)
+```
+
+
+### Scribe scroll of alter self
+
+```{r}
+gold = gold - 100*1
+downtime = downtime -3*1
+alter_count(consumables,"Scroll of Alter Self",1)
+```
 
 ### Item use
 
