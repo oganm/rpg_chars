@@ -143,10 +143,12 @@ gold = gold -
     2 - # 4 days of rations
     1 - # rope
     .2 - # waterskin
-    25 # light crossbow
+    2 # 4 javelins
 
 add(mundane_items,
-    c('caltrops','ball bearings','crowbar','manacles','mirror','signal whistle',"thieves' tools","rope","waterskin","4 days of rations","light crossbow"))
+    c('caltrops','ball bearings','crowbar','manacles','mirror','signal whistle',"thieves' tools","rope","waterskin","4 days of rations"))
+
+alter_count(mundane_items,"javelin",2)
 ```
 
 ### Adventures
@@ -226,6 +228,10 @@ gold = gold - 200
 alter_count(consumables,'Potion of Greater Healing',1)
 
 gold = gold -10 # find familiar casting
+
+
+gold = gold - 300
+alter_count(consumables,'Scroll of Haste',1)
 ```
 
 ### Downtime
@@ -296,20 +302,30 @@ downtime = downtime - 2
 alter_count(consumables,"Scroll of Protection from Evil and Good",2)
 ```
 
-### Scribe scroll of fireball
+### Scribe scroll of alter self
+
+``` r
+gold = gold - 100*1
+downtime = downtime -3*1
+alter_count(consumables,"Scroll of Alter Self",1)
+```
+
+### Copy scroll of haste
+
+``` r
+gold = gold - 150
+downtime = downtime -.1
+alter_count(consumables,"Scroll of Haste",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Haste')])
+```
+
+### Scribe scroll of Haste
 
 ``` r
 gold = gold - 150
 downtime = downtime - 5
-alter_count(consumables,"Scroll of Fireball",1)
-```
-
-### Scribe scroll of alter self
-
-``` r
-gold = gold - 100*2
-downtime = downtime -3*2
-alter_count(consumables,"Scroll of Alter Self",2)
+alter_count(consumables,"Scroll of Haste",1)
 ```
 
 ### Item use
@@ -345,7 +361,7 @@ add(spell_book,
 
 ``` r
 hp = hp + 4+stat_mod(ability_scores['Con'])
-add(features,c('Wizardly Quill','Awakened Spellbook:replace damage type'))
+add(features,c('Wizardly Quill: quick spell copying, quick erase as a bonus action','Awakened Spellbook:replace damage type, 1 quick ritual per long rest'))
 add(spell_book,
     spells[names(spells) %in% 
                c('Phantasmal Force',"Dragon's Breath")])
@@ -390,7 +406,7 @@ c(level = level,
 ```
 
     ##    level     gold downtime   hp.Con 
-    ##     5.00  1384.75    32.00    32.00
+    ##     5.00  1057.75    34.90    32.00
 
 ``` r
 ability_scores
@@ -426,8 +442,8 @@ features %>%{cat(paste("- ",.),sep='\n')}
 - Arcane Recovery: Half level
 - Daily mage armor from magic initiate
 - Resourceful: inspiration per long rest
-- Wizardly Quill
-- Awakened Spellbook:replace damage type
+- Wizardly Quill: quick spell copying, quick erase as a bonus action
+- Awakened Spellbook:replace damage type, 1 quick ritual per long rest
 - Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet
   range to mage hand
 - Memorize spell: Replace prepared spell on short rest
@@ -453,11 +469,11 @@ consumables %>% sort  %>% {cat(paste("- ",.),sep='\n')}
 
 - 1 Potion of Cold Resistence
 - 1 Potion of fire breath
+- 1 Scroll of Alter Self
 - 1 Scroll of Detect Thoughts
-- 1 Scroll of Fireball
 - 1 Scroll of Fog Cloud
+- 1 Scroll of Haste
 - 2 Potion of Greater Healing
-- 2 Scroll of Alter Self
 - 2 Scroll of Protection from Evil and Good
 
 ``` r
@@ -468,6 +484,7 @@ mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}
 - 1 pearl 100 gp
 - 10 sheets of parchment
 - 2 daggers
+- 2 javelin
 - 4 days of rations
 - 40 bolts
 - 9 flasks of oil
@@ -479,7 +496,6 @@ mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}
 - ink
 - ink pen
 - lamp
-- light crossbow
 - manacles
 - mirror
 - Quarterstaff
@@ -529,6 +545,7 @@ spell_book
     ## 
     ## Level 3
     ## =======
+    ## Haste
     ## Fireball
     ## Glyph of Warding
 

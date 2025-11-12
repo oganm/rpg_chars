@@ -236,10 +236,12 @@ gold = gold -
     2 - # 4 days of rations
     1 - # rope
     .2 - # waterskin
-    25 # light crossbow
+    2 # 4 javelins
 
 add(mundane_items,
-    c('caltrops','ball bearings','crowbar','manacles','mirror','signal whistle',"thieves' tools","rope","waterskin","4 days of rations","light crossbow"))
+    c('caltrops','ball bearings','crowbar','manacles','mirror','signal whistle',"thieves' tools","rope","waterskin","4 days of rations"))
+
+alter_count(mundane_items,"javelin",2)
 ```
 
 
@@ -323,6 +325,11 @@ gold = gold - 200
 alter_count(consumables,'Potion of Greater Healing',1)
 
 gold = gold -10 # find familiar casting
+
+
+gold = gold - 300
+alter_count(consumables,'Scroll of Haste',1)
+
 ```
 
 ### Downtime
@@ -392,21 +399,32 @@ alter_count(consumables,"Scroll of Protection from Evil and Good",2)
 ```
 
 
-### Scribe scroll of fireball
-
-```{r}
-gold = gold - 150
-downtime = downtime - 5
-alter_count(consumables,"Scroll of Fireball",1)
-```
-
-
 ### Scribe scroll of alter self
 
 ```{r}
 gold = gold - 100*1
 downtime = downtime -3*1
 alter_count(consumables,"Scroll of Alter Self",1)
+```
+
+
+### Copy scroll of haste
+```{r}
+gold = gold - 150
+downtime = downtime -.1
+alter_count(consumables,"Scroll of Haste",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Haste')])
+
+```
+
+
+### Scribe scroll of Haste
+
+```{r}
+gold = gold - 150
+downtime = downtime - 5
+alter_count(consumables,"Scroll of Haste",1)
 ```
 
 ### Item use
@@ -444,7 +462,7 @@ add(spell_book,
 
 ```{r}
 hp = hp + 4+stat_mod(ability_scores['Con'])
-add(features,c('Wizardly Quill','Awakened Spellbook:replace damage type'))
+add(features,c('Wizardly Quill: quick spell copying, quick erase as a bonus action','Awakened Spellbook:replace damage type, 1 quick ritual per long rest'))
 add(spell_book,
     spells[names(spells) %in% 
                c('Phantasmal Force',"Dragon's Breath")])
