@@ -330,6 +330,9 @@ gold = gold -10 # find familiar casting
 gold = gold - 300
 alter_count(consumables,'Scroll of Haste',1)
 
+gold = gold - 300
+alter_count(consumables,'Scroll of Fly',1)
+
 ```
 
 ### Downtime
@@ -418,6 +421,15 @@ add(spell_book,
 
 ```
 
+### Copy scroll of detect thoughts
+```{r}
+gold = gold - 100
+downtime = downtime -.1
+alter_count(consumables,"Scroll of Detect Thoughts",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Detect Thoughts')])
+```
+
 
 ### Scribe scroll of Haste
 
@@ -426,6 +438,26 @@ gold = gold - 150
 downtime = downtime - 5
 alter_count(consumables,"Scroll of Haste",1)
 ```
+
+### Copy scroll of fly
+
+```{r}
+gold = gold - 150
+downtime = downtime -.1
+alter_count(consumables,"Scroll of Fly",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Fly')])
+```
+
+### Scribe Scroll of Fly
+
+```{r}
+gold = gold - 150
+downtime = downtime - 5
+alter_count(consumables,"Scroll of Fly",1)
+```
+
+
 
 ### Item use
 

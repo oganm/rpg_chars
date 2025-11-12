@@ -232,6 +232,9 @@ gold = gold -10 # find familiar casting
 
 gold = gold - 300
 alter_count(consumables,'Scroll of Haste',1)
+
+gold = gold - 300
+alter_count(consumables,'Scroll of Fly',1)
 ```
 
 ### Downtime
@@ -320,12 +323,40 @@ add(spell_book,
     spells[names(spells) %in% c('Haste')])
 ```
 
+### Copy scroll of detect thoughts
+
+``` r
+gold = gold - 100
+downtime = downtime -.1
+alter_count(consumables,"Scroll of Detect Thoughts",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Detect Thoughts')])
+```
+
 ### Scribe scroll of Haste
 
 ``` r
 gold = gold - 150
 downtime = downtime - 5
 alter_count(consumables,"Scroll of Haste",1)
+```
+
+### Copy scroll of fly
+
+``` r
+gold = gold - 150
+downtime = downtime -.1
+alter_count(consumables,"Scroll of Fly",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Fly')])
+```
+
+### Scribe Scroll of Fly
+
+``` r
+gold = gold - 150
+downtime = downtime - 5
+alter_count(consumables,"Scroll of Fly",1)
 ```
 
 ### Item use
@@ -406,7 +437,7 @@ c(level = level,
 ```
 
     ##    level     gold downtime   hp.Con 
-    ##     5.00  1057.75    34.90    32.00
+    ##     5.00   357.75    29.70    32.00
 
 ``` r
 ability_scores
@@ -470,7 +501,7 @@ consumables %>% sort  %>% {cat(paste("- ",.),sep='\n')}
 - 1 Potion of Cold Resistence
 - 1 Potion of fire breath
 - 1 Scroll of Alter Self
-- 1 Scroll of Detect Thoughts
+- 1 Scroll of Fly
 - 1 Scroll of Fog Cloud
 - 1 Scroll of Haste
 - 2 Potion of Greater Healing
@@ -538,6 +569,7 @@ spell_book
     ## Level 2
     ## =======
     ## Misty Step
+    ## Detect Thoughts
     ## Phantasmal Force
     ## Dragon's Breath
     ## Alter Self
@@ -546,6 +578,7 @@ spell_book
     ## Level 3
     ## =======
     ## Haste
+    ## Fly
     ## Fireball
     ## Glyph of Warding
 
