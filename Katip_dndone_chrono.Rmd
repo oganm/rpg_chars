@@ -3,12 +3,43 @@ title: "Katip_dndone_chrono"
 output: github_document
 ---
 
+### Contents
+
+* [On creation](#on-creation)
+* [Level ups](#level-ups)
+* [Timeline](#timeline)
+* [Final State](#final-state)
 
 
 
 ```{r setup, include=FALSE}
+# https://5e.tools/tables.html#scribing%20spell%20scrolls%3b%20spell%20scroll%20costs_xphb
+# scribing costs/ purchase cost is double
 library(wizaRd)
 library(magrittr)
+
+scribe_p = list(`0` = 15, `1` = 25, `2`= 100, `3` = 150,`4` = 1000, `5` = 1500, `6` = 10000,
+                `7` = 12500, `8` =15000, `9` = 50000)
+scroll_p = scribe_p %>% lapply(\(x){x*2})
+
+# buy_and_copy = function(name,level,spell_book,downtime,gold){
+#     book_name = substitute(spell_book) 
+#     dt_name = substitute(downtime)
+#     gp_name = substitute(gold)
+#     
+#     if(name %in% names(spell_book)){
+#         stop("Trying to relearn known spell")
+#     }
+#     
+#     # costs for a scribe wizard
+#     dt_cost = ifelse(level<=4, .1,.2)
+#     
+# }
+# 
+# copy_scroll = function(name,level,spell_book,downtime,gold,consumables){
+#     
+# }
+
 
 knitr::opts_chunk$set(echo = TRUE)
 add = function(array, things){
@@ -237,6 +268,94 @@ alter_count(mundane_items,"javelin",2)
 ```
 
 
+
+### Level ups
+
+#### Level 2
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(expertise,"Investigation")
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Identify',"Find Familiar")])
+```
+
+#### Level 3
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(features,c('Wizardly Quill: quick spell copying, quick erase as a bonus action','Awakened Spellbook:replace damage type, 1 quick ritual per long rest'))
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Phantasmal Force',"Dragon's Breath")])
+```
+
+#### Level 4
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(feats,"Telekinetic")
+add(features,"Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet range to mage hand")
+ability_scores['Int'] = ability_scores['Int'] + 1
+add(spell_book,
+    spells[names(spells) %in% 
+               "Mage Hand"])
+
+
+
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Suggestion','Alter Self',"Mending")])
+```
+
+#### Level 5
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(features, "Memorize spell: Replace one prepared spell on short rest")
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Glyph of Warding','Fireball')])
+add(magic_items,"Arcane Grimoire +1 (UC)")
+```
+
+#### Level 6
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+
+add(features, "Manifest mind: bonus action to manifest, 60 feet range. light in a 10-foot radius, darkvision with a range of 60 feet, free audio vis share, Prof bonus times spell casting. 300 feet max distance")
+
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Counterspell','Summon Undead')])
+# don't think stat block elemnts count as damage types
+spell_book$`Summon Undead`$text = ""
+
+# summon undead
+gold = gold - 300
+add(mundane_items,"Gilded Skull 300 gp")
+
+```
+
+#### Level 7
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Elemental Bane',"Raulothim's Psychic Lance")])
+```
+
+#### Level 8
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+ability_scores['Int'] = ability_scores['Int'] + 2
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Banishment',"Dimension Door")])
+```
+
 ### Timeline
 
 
@@ -250,7 +369,7 @@ add(magic_items, "Ring of Mind Shielding (UC)")
 alter_count(consumables,"Scroll of Misty Step",1)
 ```
 
-### Downtime: Copy scroll of misty step
+#### Downtime: Copy scroll of misty step
 
 ```{r}
 gold = gold - 100
@@ -259,17 +378,6 @@ add(spell_book,
     spells[names(spells) %in% c('Misty Step')])
 alter_count(consumables,'Scroll of Misty Step',-1)
 ```
-
-#### Level 2
-
-```{r}
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(expertise,"Investigation")
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Identify',"Find Familiar")])
-```
-
 
 
 #### Adventure: Steamy Shores of Danger (CCC-CIC-09)
@@ -290,19 +398,6 @@ The greeting of the forefathers is simple and consists of 7 parts:
 - Part 3: Name of grandfather
 - Part 4: Name of great grandfather
 - Parts 5, 6, 7: Life accomplishments
-
-
-
-#### Level 3
-
-```{r}
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(features,c('Wizardly Quill: quick spell copying, quick erase as a bonus action','Awakened Spellbook:replace damage type, 1 quick ritual per long rest'))
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Phantasmal Force',"Dragon's Breath")])
-```
-
 
 
 #### Downtime: Copy protection from evil and good
@@ -347,22 +442,7 @@ gold = gold + 166
 add(magic_items,"Goggles of the Night (UC)")
 ```
 
-#### Level 4
-```{r}
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(feats,"Telekinetic")
-add(features,"Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet range to mage hand")
-ability_scores['Int'] = ability_scores['Int'] + 1
-add(spell_book,
-    spells[names(spells) %in% 
-               "Mage Hand"])
 
-
-
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Suggestion','Alter Self',"Mending")])
-```
 
 
 #### Adventure: CCC-TRI-06 Haggard Heroes
@@ -393,19 +473,6 @@ alter_count(consumables,"Potion of Greater Healing",1)
 alter_count(consumables,"Potion of Cold Resistence",1)
 alter_count(consumables,"Scroll of Detect Thoughts",1)
 ```
-
-#### Level 5
-
-```{r}
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(features, "Memorize spell: Replace one prepared spell on short rest")
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Glyph of Warding','Fireball')])
-add(magic_items,"Wand of the War Mage +1 (UC)")
-```
-
-
 
 
 #### Downtime: Shopping
@@ -505,24 +572,13 @@ add(magic_items,"Mantle of Spell Resistance (R)")
 add(features,"Plague Buster: Advantage on saving throws against disease")
 ```
 
-#### Level 6
+#### Downtime: Trading Post
 
 ```{r}
-hp = hp + 4+stat_mod(ability_scores['Con'])
-
-add(features, "Manifest mind: bonus action to manifest, 60 feet range. light in a 10-foot radius, darkvision with a range of 60 feet, free audio vis share, Prof bonus times spell casting. 300 feet max distance")
-
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Counterspell','Summon Undead')])
-# don't think stat block elemnts count as damage types
-spell_book$`Summon Undead`$text = ""
-
-# summon undead
-gold = gold - 300
-add(mundane_items,"Gilded Skull 300 gp")
-
+remove(magic_items,"Geyser Figurine (Decanter of Endless Water) (UC)")
+add(magic_items, "Gauntlets of Ogre Power (UC)")
 ```
+
 
 #### Downtime: Buying and copying scroll of invisibility
 
@@ -532,6 +588,128 @@ dowtime = downtime -.1
 add(spell_book,
     spells[names(spells) %in% c('Invisibility')])
 ```
+
+#### Adventure: The Dungeon of Smelly Doom (WBW-DC-AMQ-05)
+
+```{r}
+gold = gold + 1000
+downtime = downtime + 10
+level = level + 1
+add(magic_items,"Elven Chain Shirt (R)") # TM
+add(common_items,"Pole of Collapsing")
+alter_count(consumables,"Potion of Greater Healing",1)
+alter_count(consumables,"Scroll of Dispel Magic",1)
+alter_count(consumables,"Potion of Resistance (Poison)",1)
+```
+
+#### Downtime: Copy scroll of dispell magic
+
+```{r}
+dowtime = downtime -.1
+gold = gold - 150
+alter_count(consumables,"Scroll of Dispel Magic",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Dispel Magic')])
+```
+
+#### Downtime: Buy copy scrolls
+```{r}
+gold = gold - 50- 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% c('Comprehend Languages')])
+
+```
+
+#### Adventure: CCC-GHC-BK1-05 - For the Glory of Bloutar
+
+```{r}
+alter_count(consumables,"Potion of Healing",-1)
+```
+
+```{r}
+downtime = downtime + 10
+level = level + 1
+gold = gold + 1250
+alter_count(consumables,"Potion of Healing",1)
+alter_count(consumables,"Potion of Climbing",1)
+alter_count(consumables,"Scroll of Blink",1)
+alter_count(consumables,"Scroll of Fabricate",1)
+alter_count(consumables,"Scroll of Major Image",1)
+
+add(magic_items,'Stout: Longsword +2 (R)')
+
+```
+
+#### Downtime: Copy scrolls
+
+```{r}
+downtime = downtime -.1
+gold = gold - 150
+alter_count(consumables,"Scroll of Blink",-1)
+
+
+downtime = downtime -.1
+gold = gold - 150
+alter_count(consumables,"Scroll of Major Image",-1)
+
+downtime = downtime -.1
+gold = gold - 200
+alter_count(consumables,"Scroll of Fabricate",-1)
+
+add(spell_book,
+    spells[names(spells) %in% c('Blink','Major Image','Fabricate')])
+```
+
+#### Downtime: Buy and copy scrolls
+
+```{r}
+gold = gold - scroll_p$`2` - 50*2
+downtime = downtime -.1
+# my list is out of date...
+spells$`Spray of Cards` = list(text = "force",
+                               level  =2,
+                               name = 'Spray of Cards',
+                               school = 'conjuration',
+                               classes = c('wizard'),
+                               source = "PHB",
+                               range = "Self",
+                               castingTime = '1 action',
+                               components = c("V","S"))
+add(spell_book,
+    spells[names(spells) %in% "Spray of Cards"])
+
+gold = gold - scroll_p$`2` - 50*2
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Skywrite"])
+
+
+gold = gold - scroll_p$`1` - 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Alarm"])
+
+gold = gold - scroll_p$`1` - 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Tenser's Floating Disk"])
+
+gold = gold - scroll_p$`1` - 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Unseen Servant"])
+
+gold = gold - scroll_p$`3` - 50*3
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Leomund's Tiny Hut"])
+
+# force is used as a noun
+spell_book$`Leomund's Tiny Hut`$text = ""
+```
+
+
 ### Final State
 
 ```{r}

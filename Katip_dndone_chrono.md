@@ -1,6 +1,13 @@
 Katip_dndone_chrono
 ================
 
+### Contents
+
+- [On creation](#on-creation)
+- [Level ups](#level-ups)
+- [Timeline](#timeline)
+- [Final State](#final-state)
+
 ### On creation
 
 ``` r
@@ -141,6 +148,94 @@ add(mundane_items,
 alter_count(mundane_items,"javelin",2)
 ```
 
+### Level ups
+
+#### Level 2
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(expertise,"Investigation")
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Identify',"Find Familiar")])
+```
+
+#### Level 3
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(features,c('Wizardly Quill: quick spell copying, quick erase as a bonus action','Awakened Spellbook:replace damage type, 1 quick ritual per long rest'))
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Phantasmal Force',"Dragon's Breath")])
+```
+
+#### Level 4
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(feats,"Telekinetic")
+add(features,"Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet range to mage hand")
+ability_scores['Int'] = ability_scores['Int'] + 1
+add(spell_book,
+    spells[names(spells) %in% 
+               "Mage Hand"])
+
+
+
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Suggestion','Alter Self',"Mending")])
+```
+
+#### Level 5
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(features, "Memorize spell: Replace one prepared spell on short rest")
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Glyph of Warding','Fireball')])
+add(magic_items,"Arcane Grimoire +1 (UC)")
+```
+
+#### Level 6
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+
+add(features, "Manifest mind: bonus action to manifest, 60 feet range. light in a 10-foot radius, darkvision with a range of 60 feet, free audio vis share, Prof bonus times spell casting. 300 feet max distance")
+
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Counterspell','Summon Undead')])
+# don't think stat block elemnts count as damage types
+spell_book$`Summon Undead`$text = ""
+
+# summon undead
+gold = gold - 300
+add(mundane_items,"Gilded Skull 300 gp")
+```
+
+#### Level 7
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Elemental Bane',"Raulothim's Psychic Lance")])
+```
+
+#### Level 8
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+ability_scores['Int'] = ability_scores['Int'] + 2
+add(spell_book,
+    spells[names(spells) %in% 
+               c('Banishment',"Dimension Door")])
+```
+
 ### Timeline
 
 #### Adventure: DDEX2-6 Breath of the Yellow Rose (Tier 1)
@@ -153,7 +248,7 @@ add(magic_items, "Ring of Mind Shielding (UC)")
 alter_count(consumables,"Scroll of Misty Step",1)
 ```
 
-### Downtime: Copy scroll of misty step
+#### Downtime: Copy scroll of misty step
 
 ``` r
 gold = gold - 100
@@ -161,16 +256,6 @@ downtime = downtime - 1
 add(spell_book,
     spells[names(spells) %in% c('Misty Step')])
 alter_count(consumables,'Scroll of Misty Step',-1)
-```
-
-#### Level 2
-
-``` r
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(expertise,"Investigation")
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Identify',"Find Familiar")])
 ```
 
 #### Adventure: Steamy Shores of Danger (CCC-CIC-09)
@@ -192,16 +277,6 @@ discretion). The greeting of the forefathers is simple and consists of 7
 parts: - Part 1: Name of character - Part 2: Name of father - Part 3:
 Name of grandfather - Part 4: Name of great grandfather - Parts 5, 6, 7:
 Life accomplishments
-
-#### Level 3
-
-``` r
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(features,c('Wizardly Quill: quick spell copying, quick erase as a bonus action','Awakened Spellbook:replace damage type, 1 quick ritual per long rest'))
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Phantasmal Force',"Dragon's Breath")])
-```
 
 #### Downtime: Copy protection from evil and good
 
@@ -244,24 +319,6 @@ gold = gold + 166
 add(magic_items,"Goggles of the Night (UC)")
 ```
 
-#### Level 4
-
-``` r
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(feats,"Telekinetic")
-add(features,"Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet range to mage hand")
-ability_scores['Int'] = ability_scores['Int'] + 1
-add(spell_book,
-    spells[names(spells) %in% 
-               "Mage Hand"])
-
-
-
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Suggestion','Alter Self',"Mending")])
-```
-
 #### Adventure: CCC-TRI-06 Haggard Heroes
 
 There’s a bit of a chronological silliness and a lost adventure here but
@@ -291,17 +348,6 @@ alter_count(mundane_items,"Antitoxin",1)
 alter_count(consumables,"Potion of Greater Healing",1)
 alter_count(consumables,"Potion of Cold Resistence",1)
 alter_count(consumables,"Scroll of Detect Thoughts",1)
-```
-
-#### 5
-
-``` r
-hp = hp + 4+stat_mod(ability_scores['Con'])
-add(features, "Memorize spell: Replace one prepared spell on short rest")
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Glyph of Warding','Fireball')])
-add(magic_items,"Wand of the War Mage +1 (UC)")
 ```
 
 #### Downtime: Shopping
@@ -404,22 +450,11 @@ add(magic_items,"Mantle of Spell Resistance (R)")
 add(features,"Plague Buster: Advantage on saving throws against disease")
 ```
 
-#### Level 6
+#### Downtime: Trading Post
 
 ``` r
-hp = hp + 4+stat_mod(ability_scores['Con'])
-
-add(features, "Manifest mind: bonus action to manifest, 60 feet range. light in a 10-foot radius, darkvision with a range of 60 feet, free audio vis share, Prof bonus times spell casting. 300 feet max distance")
-
-add(spell_book,
-    spells[names(spells) %in% 
-               c('Counterspell','Summon Undead')])
-# don't think stat block elemnts count as damage types
-spell_book$`Summon Undead`$text = ""
-
-# summon undead
-gold = gold - 300
-add(mundane_items,"Gilded Skull 300 gp")
+remove(magic_items,"Geyser Figurine (Decanter of Endless Water) (UC)")
+add(magic_items, "Gauntlets of Ogre Power (UC)")
 ```
 
 #### Downtime: Buying and copying scroll of invisibility
@@ -429,6 +464,125 @@ gold = gold - 200 - 100
 dowtime = downtime -.1
 add(spell_book,
     spells[names(spells) %in% c('Invisibility')])
+```
+
+#### Adventure: The Dungeon of Smelly Doom (WBW-DC-AMQ-05)
+
+``` r
+gold = gold + 1000
+downtime = downtime + 10
+level = level + 1
+add(magic_items,"Elven Chain Shirt (R)") # TM
+add(common_items,"Pole of Collapsing")
+alter_count(consumables,"Potion of Greater Healing",1)
+alter_count(consumables,"Scroll of Dispel Magic",1)
+alter_count(consumables,"Potion of Resistance (Poison)",1)
+```
+
+#### Downtime: Copy scroll of dispell magic
+
+``` r
+dowtime = downtime -.1
+gold = gold - 150
+alter_count(consumables,"Scroll of Dispel Magic",-1)
+add(spell_book,
+    spells[names(spells) %in% c('Dispel Magic')])
+```
+
+#### Downtime: Buy copy scrolls
+
+``` r
+gold = gold - 50- 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% c('Comprehend Languages')])
+```
+
+#### Adventure: CCC-GHC-BK1-05 - For the Glory of Bloutar
+
+``` r
+alter_count(consumables,"Potion of Healing",-1)
+```
+
+``` r
+downtime = downtime + 10
+level = level + 1
+gold = gold + 1250
+alter_count(consumables,"Potion of Healing",1)
+alter_count(consumables,"Potion of Climbing",1)
+alter_count(consumables,"Scroll of Blink",1)
+alter_count(consumables,"Scroll of Fabricate",1)
+alter_count(consumables,"Scroll of Major Image",1)
+
+add(magic_items,'Stout: Longsword +2 (R)')
+```
+
+#### Downtime: Copy scrolls
+
+``` r
+downtime = downtime -.1
+gold = gold - 150
+alter_count(consumables,"Scroll of Blink",-1)
+
+
+downtime = downtime -.1
+gold = gold - 150
+alter_count(consumables,"Scroll of Major Image",-1)
+
+downtime = downtime -.1
+gold = gold - 200
+alter_count(consumables,"Scroll of Fabricate",-1)
+
+add(spell_book,
+    spells[names(spells) %in% c('Blink','Major Image','Fabricate')])
+```
+
+#### Downtime: Buy and copy scrolls
+
+``` r
+gold = gold - scroll_p$`2` - 50*2
+downtime = downtime -.1
+# my list is out of date...
+spells$`Spray of Cards` = list(text = "force",
+                               level  =2,
+                               name = 'Spray of Cards',
+                               school = 'conjuration',
+                               classes = c('wizard'),
+                               source = "PHB",
+                               range = "Self",
+                               castingTime = '1 action',
+                               components = c("V","S"))
+add(spell_book,
+    spells[names(spells) %in% "Spray of Cards"])
+
+gold = gold - scroll_p$`2` - 50*2
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Skywrite"])
+
+
+gold = gold - scroll_p$`1` - 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Alarm"])
+
+gold = gold - scroll_p$`1` - 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Tenser's Floating Disk"])
+
+gold = gold - scroll_p$`1` - 50
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Unseen Servant"])
+
+gold = gold - scroll_p$`3` - 50*3
+downtime = downtime -.1
+add(spell_book,
+    spells[names(spells) %in% "Leomund's Tiny Hut"])
+
+# force is used as a noun
+spell_book$`Leomund's Tiny Hut`$text = ""
 ```
 
 ### Final State
@@ -447,14 +601,14 @@ c(level = level,
 ```
 
     ##    level     gold downtime   hp.Con 
-    ##     6.00   109.75    29.70    38.00
+    ##     8.00   259.75    48.70    50.00
 
 ``` r
 ability_scores
 ```
 
     ## Str Dex Con Int Wis Cha 
-    ##   8  14  14  18  12  10
+    ##   8  14  14  20  12  10
 
 ``` r
 skills
@@ -488,10 +642,10 @@ features %>%{cat(paste("- ",.),sep='\n')}
 - Telekinetic: bonus action shove 5 feet, str save, spell DC, +30 feet
   range to mage hand
 - Memorize spell: Replace one prepared spell on short rest
-- Plague Buster: Advantage on saving throws against disease
 - Manifest mind: bonus action to manifest, 60 feet range. light in a
   10-foot radius, darkvision with a range of 60 feet, free audio vis
   share, Prof bonus times spell casting. 300 feet max distance
+- Plague Buster: Advantage on saving throws against disease
 
 ``` r
 # magic item limit for tier 2: 3
@@ -499,14 +653,16 @@ magic_items %>% sort  %>%{cat(paste("- ",.),sep='\n')}
 ```
 
 - +1 half plate (R)
+- Arcane Grimoire +1 (UC)
 - Boots of Elvenkind (UC)
-- Geyser Figurine (Decanter of Endless Water) (UC)
+- Elven Chain Shirt (R)
+- Gauntlets of Ogre Power (UC)
 - Goggles of the Night (UC)
 - Mantle of Spell Resistance (R)
 - Ring of Evasion (R)
 - Ring of Mind Shielding (UC)
+- Stout: Longsword +2 (R)
 - Wand of Lightning Bolts (R)
-- Wand of the War Mage +1 (UC)
 
 ``` r
 # common item limit for tier 2: 5
@@ -515,15 +671,17 @@ magic_items %>% sort  %>%{cat(paste("- ",.),sep='\n')}
 consumables %>% sort  %>% {cat(paste("- ",.),sep='\n')}
 ```
 
+- 1 Potion of Climbing
 - 1 Potion of Cold Resistence
 - 1 Potion of fire breath
 - 1 Potion of Healing
+- 1 Potion of Resistance (Poison)
 - 1 Scroll of Alter Self
 - 1 Scroll of Fly
 - 1 Scroll of Fog Cloud
 - 1 Scroll of Protection from Evil and Good
-- 2 Potion of Greater Healing
 - 2 Scroll of Haste
+- 3 Potion of Greater Healing
 
 ``` r
 mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}
@@ -583,25 +741,43 @@ spell_book
     ## Identify
     ## Protection from Evil and Good
     ## Detect Magic
+    ## Comprehend Languages
+    ## Alarm
+    ## Tenser's Floating Disk
+    ## Unseen Servant
     ## 
     ## Level 2
     ## =======
-    ## Misty Step
     ## Phantasmal Force
     ## Dragon's Breath
     ## Alter Self
     ## Suggestion
+    ## Misty Step
     ## Detect Thoughts
     ## Invisibility
+    ## Spray of Cards
+    ## Skywrite
     ## 
     ## Level 3
     ## =======
     ## Fireball
     ## Glyph of Warding
-    ## Haste
-    ## Fly
     ## Counterspell
     ## Summon Undead
+    ## Haste
+    ## Fly
+    ## Dispel Magic
+    ## Blink
+    ## Major Image
+    ## Leomund's Tiny Hut
+    ## 
+    ## Level 4
+    ## =======
+    ## Elemental Bane
+    ## Raulothim's Psychic Lance
+    ## Banishment
+    ## Dimension Door
+    ## Fabricate
 
 ``` r
 available_elements(spell_book) %>% 
@@ -613,8 +789,12 @@ available_elements(spell_book) %>%
     ## [6] "lightning"   "thunder"    
     ## 
     ## $`2`
-    ## [1] "acid"        "bludgeoning" "cold"        "fire"        "lightning"  
-    ## [6] "poison"      "psychic"     "slashing"   
+    ## [1] "acid"        "bludgeoning" "cold"        "fire"        "force"      
+    ## [6] "lightning"   "poison"      "psychic"     "slashing"   
     ## 
     ## $`3`
-    ## [1] "acid"      "cold"      "fire"      "lightning" "thunder"
+    ## [1] "acid"      "cold"      "fire"      "lightning" "thunder"  
+    ## 
+    ## $`4`
+    ## [1] "acid"      "cold"      "fire"      "force"     "lightning" "psychic"  
+    ## [7] "thunder"
