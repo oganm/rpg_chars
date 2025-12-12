@@ -20,6 +20,9 @@ library(magrittr)
 
 scribe_p = list(`0` = 15, `1` = 25, `2`= 100, `3` = 150,`4` = 1000, `5` = 1500, `6` = 10000,
                 `7` = 12500, `8` =15000, `9` = 50000)
+
+scribe_t = list(`0` = 1, `1` = 1, `2`= 3, `3` = 5,`4` = 10, `5` = 25, `6` = 40,
+                `7` = 50, `8` =60, `9` = 120)
 scroll_p = scribe_p %>% lapply(\(x){x*2})
 
 # buy_and_copy = function(name,level,spell_book,downtime,gold){
@@ -353,9 +356,62 @@ hp = hp + 4+stat_mod(ability_scores['Con'])
 ability_scores['Int'] = ability_scores['Int'] + 2
 add(spell_book,
     spells[names(spells) %in% 
-               c('Banishment',"Dimension Door")])
+               c('Arcane Eye',"Dimension Door")])
 ```
 
+
+#### Level 9
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+
+
+# my list is out of date...
+spells$`Songal's Elemental Suffusion` = list(text = "Acid, Cold, Fire, Lightning, or Thunder",
+                               level  =5,
+                               name = "Songal's Elemental Suffusion",
+                               school = 'transmutation',
+                               classes = c('wizard'),
+                               source = "PHB",
+                               range = "Self",
+                               castingTime = '1 action',
+                               components = c("V","S"))
+
+add(spell_book,
+    spells[names(spells) %in%
+               c('Synaptic Static',"Songal's Elemental Suffusion")])
+```
+
+Artificer
+```{r}
+# hp = hp + 5+stat_mod(ability_scores['Con'])
+# spells$`Elementalism` = list(text = "",
+#                                level  =0,
+#                                name = "Elementalism",
+#                                school = 'transmutation',
+#                                classes = c('wizard'),
+#                                source = "PHB",
+#                                range = "Self",
+#                                castingTime = '1 action',
+#                                components = c("V","S"))
+# add(spell_book,
+#     spells[names(spells) %in%
+#                c("Mending","Guidance","Elementalist")])
+# 
+# add(features,"Tinker's magic: create a mundane item prof times per long rest ")
+```
+
+#### Level 10
+
+```{r}
+hp = hp + 4+stat_mod(ability_scores['Con'])
+
+add(features, "Master scriviner: half price to scribe, 1 level 1 or 2 spell in a scroll, +1 to level")
+
+add(spell_book,
+    spells[names(spells) %in%
+               c("Rary's Telepathic Bond","Wall of Force","Prestidigitation")])
+```
 ### Timeline
 
 
@@ -708,6 +764,77 @@ add(spell_book,
 # force is used as a noun
 spell_book$`Leomund's Tiny Hut`$text = ""
 ```
+
+#### Adventure: Out of Time (CCC-TRI-31 TIME1-1)
+
+Friends in Hot Places. Your actions today have earned you the gratitude of a very powerful creature. Should you ever find yourself back on the Elemental Plane of Fire and visiting the City of Brass, you will be welcomed as a friend
+
+```{r}
+gold = gold + 825 
+downtime = downtime + 10
+level = level +  1
+
+add(magic_items,"Dimensional Shackles (R)")
+add(features,"Friends in Hot Places: Friend in City of Brass")
+```
+
+
+#### Shopping: Artificer multiclass stuff
+
+```{r}
+gold = gold - 50
+add(mundane_items,"Tinker's tools")
+gold = gold - 10
+add(mundane_items,"Shield")
+
+```
+
+
+#### Downtime: scribe
+
+```{r}
+gold = gold -scribe_p$`2`
+downtime = downtime - scribe_t$`2`
+alter_count(consumables,"Scroll of Invisibility",1)
+
+```
+
+
+#### Adventure: SJ-DC-Playtest "A Big Heist" 
+```{r}
+alter_count(consumables,"Scroll of Fly",-1)
+alter_count(consumables,"Scroll of Fog Cloud",-1)
+```
+
+```{r}
+downtime = downtime + 10
+level = level +1
+gold = gold + 1000
+add(magic_items,"Ring of Feather Falling (R)")
+alter_count(consumables,"Potion of Greater Healing",1)
+```
+
+#### Downtime: scroll stuff
+Master Scrivener, half price scribing
+
+```{r}
+gold = gold - scribe_p$`3`/2*2
+downtime = downtime - scribe_t$`2`/2*2
+alter_count(consumables,"Scroll of Fly",2)
+
+gold = gold - scribe_p$`1`/2
+downtime = downtime - scribe_t$`1`/2
+alter_count(consumables,"Scroll of Fog Cloud",1)
+```
+
+```{r}
+gold = gold - scroll_p$`2` - 50*2
+add(spell_book,spells[names(spells) %in% "Earthbind"])
+gold = gold - scribe_p$`2`
+downtime = downtime - scribe_t$`2`
+alter_count(consumables,"Scroll of Earthbind",1)
+```
+
 
 
 ### Final State

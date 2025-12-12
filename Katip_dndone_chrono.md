@@ -233,7 +233,61 @@ hp = hp + 4+stat_mod(ability_scores['Con'])
 ability_scores['Int'] = ability_scores['Int'] + 2
 add(spell_book,
     spells[names(spells) %in% 
-               c('Banishment',"Dimension Door")])
+               c('Arcane Eye',"Dimension Door")])
+```
+
+#### Level 9
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+
+
+# my list is out of date...
+spells$`Songal's Elemental Suffusion` = list(text = "Acid, Cold, Fire, Lightning, or Thunder",
+                               level  =5,
+                               name = "Songal's Elemental Suffusion",
+                               school = 'transmutation',
+                               classes = c('wizard'),
+                               source = "PHB",
+                               range = "Self",
+                               castingTime = '1 action',
+                               components = c("V","S"))
+
+add(spell_book,
+    spells[names(spells) %in%
+               c('Synaptic Static',"Songal's Elemental Suffusion")])
+```
+
+Artificer
+
+``` r
+# hp = hp + 5+stat_mod(ability_scores['Con'])
+# spells$`Elementalism` = list(text = "",
+#                                level  =0,
+#                                name = "Elementalism",
+#                                school = 'transmutation',
+#                                classes = c('wizard'),
+#                                source = "PHB",
+#                                range = "Self",
+#                                castingTime = '1 action',
+#                                components = c("V","S"))
+# add(spell_book,
+#     spells[names(spells) %in%
+#                c("Mending","Guidance","Elementalist")])
+# 
+# add(features,"Tinker's magic: create a mundane item prof times per long rest ")
+```
+
+#### Level 10
+
+``` r
+hp = hp + 4+stat_mod(ability_scores['Con'])
+
+add(features, "Master scriviner: half price to scribe, 1 level 1 or 2 spell in a scroll, +1 to level")
+
+add(spell_book,
+    spells[names(spells) %in%
+               c("Rary's Telepathic Bond","Wall of Force","Prestidigitation")])
 ```
 
 ### Timeline
@@ -585,6 +639,76 @@ add(spell_book,
 spell_book$`Leomund's Tiny Hut`$text = ""
 ```
 
+#### Adventure: Out of Time (CCC-TRI-31 TIME1-1)
+
+Friends in Hot Places. Your actions today have earned you the gratitude
+of a very powerful creature. Should you ever find yourself back on the
+Elemental Plane of Fire and visiting the City of Brass, you will be
+welcomed as a friend
+
+``` r
+gold = gold + 825 
+downtime = downtime + 10
+level = level +  1
+
+add(magic_items,"Dimensional Shackles (R)")
+add(features,"Friends in Hot Places: Friend in City of Brass")
+```
+
+#### Shopping: Artificer multiclass stuff
+
+``` r
+gold = gold - 50
+add(mundane_items,"Tinker's tools")
+gold = gold - 10
+add(mundane_items,"Shield")
+```
+
+#### Downtime: scribe
+
+``` r
+gold = gold -scribe_p$`2`
+downtime = downtime - scribe_t$`2`
+alter_count(consumables,"Scroll of Invisibility",1)
+```
+
+#### Adventure: SJ-DC-Playtest “A Big Heist”
+
+``` r
+alter_count(consumables,"Scroll of Fly",-1)
+alter_count(consumables,"Scroll of Fog Cloud",-1)
+```
+
+``` r
+downtime = downtime + 10
+level = level +1
+gold = gold + 1000
+add(magic_items,"Ring of Feather Falling (R)")
+alter_count(consumables,"Potion of Greater Healing",1)
+```
+
+#### Downtime: scroll stuff
+
+Master Scrivener, half price scribing
+
+``` r
+gold = gold - scribe_p$`3`/2*2
+downtime = downtime - scribe_t$`2`/2*2
+alter_count(consumables,"Scroll of Fly",2)
+
+gold = gold - scribe_p$`1`/2
+downtime = downtime - scribe_t$`1`/2
+alter_count(consumables,"Scroll of Fog Cloud",1)
+```
+
+``` r
+gold = gold - scroll_p$`2` - 50*2
+add(spell_book,spells[names(spells) %in% "Earthbind"])
+gold = gold - scribe_p$`2`
+downtime = downtime - scribe_t$`2`
+alter_count(consumables,"Scroll of Earthbind",1)
+```
+
 ### Final State
 
 ``` r
@@ -601,7 +725,7 @@ c(level = level,
 ```
 
     ##    level     gold downtime   hp.Con 
-    ##     8.00   259.75    48.70    50.00
+    ##    10.00  1362.25    59.20    62.00
 
 ``` r
 ability_scores
@@ -645,7 +769,10 @@ features %>%{cat(paste("- ",.),sep='\n')}
 - Manifest mind: bonus action to manifest, 60 feet range. light in a
   10-foot radius, darkvision with a range of 60 feet, free audio vis
   share, Prof bonus times spell casting. 300 feet max distance
+- Master scriviner: half price to scribe, 1 level 1 or 2 spell in a
+  scroll, +1 to level
 - Plague Buster: Advantage on saving throws against disease
+- Friends in Hot Places: Friend in City of Brass
 
 ``` r
 # magic item limit for tier 2: 3
@@ -655,11 +782,13 @@ magic_items %>% sort  %>%{cat(paste("- ",.),sep='\n')}
 - +1 half plate (R)
 - Arcane Grimoire +1 (UC)
 - Boots of Elvenkind (UC)
+- Dimensional Shackles (R)
 - Elven Chain Shirt (R)
 - Gauntlets of Ogre Power (UC)
 - Goggles of the Night (UC)
 - Mantle of Spell Resistance (R)
 - Ring of Evasion (R)
+- Ring of Feather Falling (R)
 - Ring of Mind Shielding (UC)
 - Stout: Longsword +2 (R)
 - Wand of Lightning Bolts (R)
@@ -677,11 +806,13 @@ consumables %>% sort  %>% {cat(paste("- ",.),sep='\n')}
 - 1 Potion of Healing
 - 1 Potion of Resistance (Poison)
 - 1 Scroll of Alter Self
-- 1 Scroll of Fly
+- 1 Scroll of Earthbind
 - 1 Scroll of Fog Cloud
+- 1 Scroll of Invisibility
 - 1 Scroll of Protection from Evil and Good
+- 2 Scroll of Fly
 - 2 Scroll of Haste
-- 3 Potion of Greater Healing
+- 4 Potion of Greater Healing
 
 ``` r
 mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}
@@ -708,10 +839,12 @@ mundane_items %>% sort %>%{cat(paste("- ",.),sep='\n')}
 - Quarterstaff
 - Robe
 - rope
+- Shield
 - signal whistle
 - Spellbook
 - thieves’ tools
 - tinderbox
+- Tinker’s tools
 - waterskin
 
 ``` r
@@ -727,6 +860,7 @@ spell_book
     ## True Strike
     ## Mage Hand
     ## Mending
+    ## Prestidigitation
     ## 
     ## Level 1
     ## =======
@@ -757,6 +891,7 @@ spell_book
     ## Invisibility
     ## Spray of Cards
     ## Skywrite
+    ## Earthbind
     ## 
     ## Level 3
     ## =======
@@ -775,9 +910,16 @@ spell_book
     ## =======
     ## Elemental Bane
     ## Raulothim's Psychic Lance
-    ## Banishment
+    ## Arcane Eye
     ## Dimension Door
     ## Fabricate
+    ## 
+    ## Level 5
+    ## =======
+    ## Synaptic Static
+    ## Songal's Elemental Suffusion
+    ## Rary's Telepathic Bond
+    ## Wall of Force
 
 ``` r
 available_elements(spell_book) %>% 
@@ -796,5 +938,9 @@ available_elements(spell_book) %>%
     ## [1] "acid"      "cold"      "fire"      "lightning" "thunder"  
     ## 
     ## $`4`
+    ## [1] "acid"      "cold"      "fire"      "force"     "lightning" "psychic"  
+    ## [7] "thunder"  
+    ## 
+    ## $`5`
     ## [1] "acid"      "cold"      "fire"      "force"     "lightning" "psychic"  
     ## [7] "thunder"
